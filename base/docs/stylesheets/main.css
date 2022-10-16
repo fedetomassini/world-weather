@@ -1,0 +1,37 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Anton&display=swap');
+/* 
+font-family: 'Anton', sans-serif; -> Numbers
+font-family: 'Alata', sans-serif; -> All
+*/
+:root{
+    /* Dark Mode Settings */
+    --dark-mode-bg: #121212;
+    --dark-mode-color: #fff;
+    /* Light Mode Settings */
+    --light-mode-bg: #fff;
+    --light-mode-color: #121212;
+    /* Bg other sections */
+    --bg-color-section-darkgray: #24292e;
+}
+body{
+    margin: 0;
+    cursor: default;
+    color: var(--dark-mode-color);
+    background-color: var(--dark-mode-bg);
+    font-family: 'Alata', sans-serif;
+}
+section.web-titles{
+    font-size: 20pt;
+    text-align: center;
+}
+section.web-titles h1.main-title:hover{
+    color: #FFE9AE;
+}
+section.contents-darkgray{
+    border-top: 1px solid #FFE9AE;
+    border-bottom: 1px solid #FFE9AE;
+    height: 450px;
+    margin-top: 45px;
+    background-color: var(--bg-color-section-darkgray);
+}
