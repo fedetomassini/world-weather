@@ -1,0 +1,4 @@
+1) background dependiendo de la ubicacion (ej= tokyo= fondo de tokyo)
+2) nueva paleta de colores
+3) alinear el weather loading
+4) queries (phone, tablet)
