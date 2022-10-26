@@ -28,7 +28,7 @@ body{
     background-position:center center;
 }
 
-/* @keyframes example{
+@keyframes example{
   0%{
     background-image: url(../assets/img/cloud.jpg);
   }
@@ -50,7 +50,7 @@ body{
   100%{
     background-image: url(../assets/img/rain.jpg);
   }
-} */
+}
 
 section.web-titles{
     font-size: 20pt;
