@@ -23,8 +23,9 @@ body{
     background-color: #00bbf9;
     font-family: 'Alata', sans-serif;
     animation-name: example;
-    animation-duration: 10s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
+    background-position:center center;
 }
 
 @keyframes example{
@@ -37,12 +38,20 @@ body{
   50%{
     background-image: url(../assets/img/cloud\ 1.jpg);
   }
+  65%{
+    background-image: url(../assets/img/beach.jpg);
+  }
   75%{
     background-image: url(../assets/img/clouds\ sunset.jpg);
+  }
+  95%{
+    background-image: url(../assets/img/sheets.jpg);
   }
   100%{
     background-image: url(../assets/img/rain.jpg);
   }
+
+
 }
 section.web-titles{
     font-size: 20pt;
@@ -53,8 +62,6 @@ section.web-titles h1.main-title:hover{
     color: rgb(245, 245, 28);
 }
 section.contents-darkgray{
-    /* border-top: 3px solid #FFE9AE;
-    border-bottom: 3px solid #FFE9AE; */
     height: 530px;
     margin-top: 45px;
     background-color:transparent;
