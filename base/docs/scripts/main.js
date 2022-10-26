@@ -54,4 +54,5 @@ document
         }
     });
 
-weather.fetchWeather("Denver");
+/* Default */
+weather.fetchWeather("Tokyo");
