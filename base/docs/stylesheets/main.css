@@ -22,6 +22,27 @@ body{
     color: var(--dark-mode-color);
     background-color: #00bbf9;
     font-family: 'Alata', sans-serif;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example{
+  0%{
+    background-image: url(../assets/img/cloud.jpg);
+  }
+  25%{
+    background-image: url(../assets/img/cloud-rainbow.jpg);
+  }
+  50%{
+    background-image: url(../assets/img/cloud\ 1.jpg);
+  }
+  75%{
+    background-image: url(../assets/img/clouds\ sunset.jpg);
+  }
+  100%{
+    background-image: url(../assets/img/rain.jpg);
+  }
 }
 section.web-titles{
     font-size: 20pt;
@@ -32,15 +53,15 @@ section.web-titles h1.main-title:hover{
     color: rgb(245, 245, 28);
 }
 section.contents-darkgray{
-    border-top: 3px solid #FFE9AE;
-    border-bottom: 3px solid #FFE9AE;
+    /* border-top: 3px solid #FFE9AE;
+    border-bottom: 3px solid #FFE9AE; */
     height: 530px;
     margin-top: 45px;
-    background-color: #a2d2ff;
+    background-color:transparent;
 }
 
 .card{
-    background-color: #9d8c8c22;
+    background-color: #120b0ba5;
     padding: 2em;
     border-radius: 30px;
     width: 100%;
@@ -105,3 +126,31 @@ section.contents-darkgray{
     justify-content: center;
     align-items: center;
   }
+  
+  /* #box{
+    margin: 300px auto; /*as per your preferences*/
+    /* height: 300px;
+    width: 450px;
+    border: 2px solid crimson;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite; */
+
+
+  /* @keyframes example{
+    0%{
+      background-image: url(../assets/img/cloud.jpg);
+    }
+    25%{
+      background-image: url(../assets/img/cloud-rainbow.jpg);
+    }
+    50%{
+      background-image: url(../assets/img/cloud\ 1.jpg);
+    }
+    75%{
+      background-image: url(../assets/img/clouds\ sunset.jpg);
+    }
+    100%{
+      background-image: url(../assets/img/);
+    }
+ } */
