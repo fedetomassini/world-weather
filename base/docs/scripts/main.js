@@ -6,8 +6,19 @@ let weather = {
             )
             .then((response) => {
                 if (!response.ok) {
-                    alert("No se encontro la ubicacion.");
-                    throw new Error("No se encontro la ubicacion.");
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'No weather found!',
+                        showConfirmButton: false,
+                        timer: 1500,
+                        timerProgressBar: true,
+                        allowEscapeKey: false,
+                        allowEnterKey: false,
+                        allowOutsideClick: false,
+                        heightAuto: true,
+                        width: 425,
+                    })
                 }
                 return response.json();
             })
@@ -36,6 +47,28 @@ let weather = {
         document.querySelector(".wind").innerText = "Velocidad del viento: " + speed + " km/h";
         document.querySelector(".weather").classList.remove("loading");
         /* document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')"; */
+
+        ///////////// Language Selector \\\\\\\\\\\\\
+        ///////////// Work In Progress !NO TOCAR¡ \\\\\\\\\\\\\
+        let html_lang = document.getElementsByTagName("html")[0].getAttribute("lang");
+
+        const languages = {
+            "es": "español",
+            "en": "english",
+        }
+        if(html_lang === "es"){
+            console.group("Language Selector");
+            console.info("Idioma del sitio web -> " + languages.es);
+            document.querySelector(".search-bar").placeholder="Busca una ciudad...";
+            document.querySelector(".humidity").innerText = "Humedad: " + humidity + "%";
+            document.querySelector(".wind").innerText = "Velocidad del viento: " + speed + " km/h";
+        }else if(html_lang === "en"){
+            console.group("Language Selector");
+            console.info("Website language -> " + languages.en);
+            document.querySelector(".search-bar").placeholder="Search a city...";
+            document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
+            document.querySelector(".wind").innerText = "Wind Speed: " + speed + " km/h";
+        }
     },
     search: function() {
         this.fetchWeather(document.querySelector(".search-bar").value);
