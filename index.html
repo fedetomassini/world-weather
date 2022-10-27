@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,19 +22,21 @@
     <!--  -->
     <link rel="preload" href="./base/docs/assets/web/icon/web-icon.ico" as="icon">
     <link rel="preload" href="./base/docs/stylesheets/main.css" as="style">
-    <link rel="preload" href="./base/docs/scripts/main.js" as="script">
     <link rel="icon" href="./base/docs/assets/web/icon/web-icon.ico">
     <link rel="stylesheet" href="./base/docs/stylesheets/main.css" as="style">
     <!--  -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.3/dist/sweetalert2.all.min.js"></script>
-    <script src="./base/docs/scripts/main.js" type="module"></script>
     <script src="https://kit.fontawesome.com/b9667d8e6a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.3/dist/sweetalert2.all.min.js"></script>
     <!--  -->
     <title>World Weather</title>
 </head>
 <body>
     <section class="web-titles">
         <h1 class="main-title"><i class="fa-solid fa-umbrella"></i> World Weather <i class="fa-solid fa-umbrella"></i></h1>
+    </section>
+    <section class="languagesBox">
+        <button class="languageSelector spanish" type="button">Español</button>
+        <button class="languageSelector english" type="button">English</button>
     </section>
     <!-- Boxs  -->
     <section class="contents-darkgray">
@@ -61,5 +63,7 @@
                 <!--  -->
             </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="./base/docs/scripts/main.js" type="module"></script>
 </body>
 </html>
