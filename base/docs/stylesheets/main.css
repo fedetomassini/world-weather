@@ -12,7 +12,6 @@ font-family: 'Alata', sans-serif; -> All
 }
 
 html{
-overflow: hidden;
 }
 
 :root{
@@ -73,7 +72,7 @@ body{
     background-image: url(../assets/img/peru.jpg);
   }
   100%{
-    background-image: url(../assets/img/tokyo.jpg);
+    background-image: url(../assets/img/bs.as.jpg);
   }
 }
 
