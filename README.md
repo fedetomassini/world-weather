@@ -6,8 +6,13 @@
 
 ---
 
+### Current Version
++ a-0.1
+
+---
+
 #### Changelog:
-###### 26/10/2022 - [v-1.0]
-+ Lanzamiento Preliminar
+###### 26/10/2022 - [v-a-0.1]
++ Alpha version.
 
 ---
