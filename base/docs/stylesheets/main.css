@@ -35,53 +35,13 @@ body{
   background-size: cover;
 }
 
-
-@keyframes example{
-  0%{
-    background-image: url(../assets/img/cloud.jpg);
-  }
-  10%{
-    background-image: url(../assets/img/clouds\ sunset.jpg);
-  }
-  20%{
-    background-image: url(../assets/img/cloud\ 1.jpg);
-  }
-  30%{
-    background-image: url(../assets/img/beach.jpg);
-  }
-  
-  40%{
-    background-image: url(../assets/img/sheets.jpg);
-  }
-  50%{
-    background-image: url(../assets/img/rain.jpg);
-  }
-  60%{
-    background-image: url(../assets/img/roma.jpg);
-  }
-  70%{
-    background-image: url(../assets/img/italia.jpg);
-  }
-  80%{
-    background-image: url(../assets/img/uruguay.jpg);
-  }
-  90%{
-    background-image: url(../assets/img/peru.jpg);
-  }
-  100%{
-    background-image: url(../assets/img/bs.as.jpg);
-  }
-}
-
 section.web-titles{
   font-size: 30pt;
   text-align: center;
   color: rgb(71, 181, 63);
   font-family: 'Poppins', sans-serif;
-  margin-top: 20px;
   text-shadow: 3px -2px rgba(228, 225, 225, 0.893);
   padding: 30px;
-
 }
 section.web-titles h1.main-title:hover{
   color: rgb(19, 165, 238);
@@ -100,7 +60,7 @@ section.contents-darkgray{
   max-width: 420px;
   margin: 1em;
   box-shadow: -5px 19px 19px 10px rgba(2, 2, 2, 0.486);
-  margin-top: 120px;
+  margin-top: 90px;
 }
 
 .search {
@@ -174,3 +134,78 @@ h1.temp {
 .web-titles{
   box-shadow: -5px  19px 10px rgba(2, 2, 2, 0.486);
 }
+
+/* Language Selector Setup */
+/* Work In Progress */
+button.languageSelector{
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+}
+
+div.languageSelector.box{
+  display: flex;
+  height: auto;
+  width: max-content;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: -120px;
+  border-radius: 100px;
+  border: 2px solid rgba(0 0 0 / 50%);
+  border-style: dashed;
+  background-color: rgba(255 255 255 / 40%);
+}
+
+div.languageSelector.box:hover > button.languageSelector{
+  margin-right: 150px;
+  display: inline-block;
+  color: rgba(0 0 0 / 90%);
+}
+
+button.languageSelector:hover{
+  cursor: pointer;
+}
+
+button.languageSelector.langs{
+  display: none;
+  margin-left: -135px;
+}
+
+
+
+/* Old Background System */
+/* @keyframes example{
+  0%{
+    background-image: url(../assets/img/cloud.jpg);
+  }
+  10%{
+    background-image: url(../assets/img/clouds\ sunset.jpg);
+  }
+  20%{
+    background-image: url(../assets/img/cloud\ 1.jpg);
+  }
+  30%{
+    background-image: url(../assets/img/beach.jpg);
+  }
+  40%{
+    background-image: url(../assets/img/sheets.jpg);
+  }
+  50%{
+    background-image: url(../assets/img/rain.jpg);
+  }
+  60%{
+    background-image: url(../assets/img/roma.jpg);
+  }
+  70%{
+    background-image: url(../assets/img/italia.jpg);
+  }
+  80%{
+    background-image: url(../assets/img/uruguay.jpg);
+  }
+  90%{
+    background-image: url(../assets/img/peru.jpg);
+  }
+  100%{
+    background-image: url(../assets/img/bs.as.jpg);
+  }
+} */

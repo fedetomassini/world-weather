@@ -19,7 +19,8 @@ let weather = {
                         heightAuto: true,
                         width: 425,
                     });
-                    console.error("Invalid entry");
+                    console.groupCollapsed("Invalid entry");
+                    console.log("⤷" + " " + city + " is not a city");
                 }
                 return response.json();
             })
@@ -44,49 +45,12 @@ let weather = {
         $('.icon').html("https://openweathermap.org/img/wn/" + icon + ".png");
         $('.description').html(description);
         $('.temp').html(temp + "°C");
-        $(".humidity").html("Humedad: " + humidity + "%");
-        $(".wind").html("Velocidad del viento: " + speed + " km/h");
+        $(".humidity").html("Humidity: " + humidity + "%");
+        $(".wind").html("Wind Speed: " + speed + " km/h");
         document.querySelector(".weather").classList.remove("loading");
-        /* document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')"; */
-
-            ////////////////////////////////////////
-        ////////////// Language Selector \\\\\\\\\\\\\
-            ////////////////////////////////////////
-       let html_lang = document.getElementsByTagName("html")[0].getAttribute("lang");
-        const languages = {
-            "es": "español",
-            "en": "english",
-        }
-        document.querySelector(".languageSelector.english").addEventListener("click", function english(){
-                document.getElementsByTagName("html")[0].setAttribute("lang", "en");
-                console.group("Language Selector");
-                console.info("Website language -> " + languages.en);
-                $('.search-bar').attr('placeholder', "Search a city...");
-                $(".humidity").html("Humidity: " + humidity + "%");
-                $(".wind").html("Wind Speed: " + speed + " km/h");
-                localStorage.setItem("language", "english");
-                state:{
-                    lang: localStorage.setItem('lang', html_lang = "en");
-                }
-        });
-        document.querySelector(".languageSelector.spanish").addEventListener("click", function spanish(){
-                document.getElementsByTagName("html")[0].setAttribute("lang", "es");
-                console.group("Language Selector");
-                console.info("Idioma del sitio web -> " + languages.es);
-                $('.search-bar').attr('placeholder', "Busca una ciudad...");
-                $(".humidity").html("Humedad: " + humidity + "%");
-                $(".wind").html("Velocidad del viento: " + speed + " km/h");
-                localStorage.setItem("language", "spanish");
-                state:{
-                    lang: localStorage.setItem('lang', html_lang = "es");
-                }
-        });
-        if(localStorage.getItem("language" || "lang") === "spanish" || "es"){
-            /* return; */
-        }else if(localStorage.getItem("language" || "lang") === "english" || "en"){  
-            /* return; */
-        }
-        ////////////////////////////////////////
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?+" + name + "+city+')";
+        console.groupCollapsed("City found correctly");
+        console.log("⤷" + " " + name);
     },
     search: function(){
         this.fetchWeather(document.querySelector(".search-bar").value);
@@ -96,13 +60,12 @@ let weather = {
 document.querySelector(".search button").addEventListener("click", function(){
     weather.search();
 });
-
 document.querySelector(".search-bar").addEventListener("keyup", function(event){
     if (event.key == "Enter"){
         weather.search();
     }
 });
 
-/* Default */
+// Default City //
 weather.fetchWeather("Tokyo");
 console.clear();

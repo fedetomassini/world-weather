@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,23 +20,27 @@
     <meta name="application-name" content="World Weather">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--  -->
-    <link rel="preload" href="./base/docs/assets/web/icon/web-icon.ico" as="icon">
+    <link rel="preload" href="./base/docs/assets/web/icon/web_icon.ico" as="icon">
     <link rel="preload" href="./base/docs/stylesheets/main.css" as="style">
-    <link rel="icon" href="./base/docs/assets/web/icon/web-icon.ico">
+    <link rel="icon" href="./base/docs/assets/web/icon/web_icon.ico">
     <link rel="stylesheet" href="./base/docs/stylesheets/main.css" as="style">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
     <!--  -->
     <script src="https://kit.fontawesome.com/b9667d8e6a.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.3/dist/sweetalert2.all.min.js"></script>
     <!--  -->
-    <title>World Weather</title>
+    <title>World Weather | a-0.1.2</title>
 </head>
 <body>
     <section class="web-titles">
         <h1 class="main-title"><i class="fa-solid fa-umbrella"></i> World Weather <i class="fa-solid fa-umbrella"></i></h1>
     </section>
     <section class="languagesBox">
-        <button class="languageSelector spanish" type="button">Español</button>
-        <button class="languageSelector english" type="button">English</button>
+        <div class="languageSelector box">
+            <button class="languageSelector"><i class="fa-solid fa-earth-americas fa-2x"></i></button>
+            <button class="languageSelector langs spanish" type="button"><span class="fi fi-es"></span></button>
+            <button class="languageSelector langs english" type="button"><span class="fi fi-us"></span></button>
+        </div>
     </section>
     <!-- Boxs  -->
     <section class="contents-darkgray">
@@ -45,20 +49,21 @@
                 <div class="search">
                     <input type="text" class="search-bar" placeholder="Search a city...">
                     <button class="search button">
-                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M15.504 13.616l-3.79-3.223c-0.392-0.353-0.811-0.514-1.149-0.499 0.895-1.048 1.435-2.407 1.435-3.893 0-3.314-2.686-6-6-6s-6 2.686-6 6 2.686 6 6 6c1.486 0 2.845-0.54 3.893-1.435-0.016 0.338 0.146 0.757 0.499 1.149l3.223 3.79c0.552 0.613 1.453 0.665 2.003 0.115s0.498-1.452-0.115-2.003zM6 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z">
-                        </path>
-                    </svg></button>
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.504 13.616l-3.79-3.223c-0.392-0.353-0.811-0.514-1.149-0.499 0.895-1.048 1.435-2.407 1.435-3.893 0-3.314-2.686-6-6-6s-6 2.686-6 6 2.686 6 6 6c1.486 0 2.845-0.54 3.893-1.435-0.016 0.338 0.146 0.757 0.499 1.149l3.223 3.79c0.552 0.613 1.453 0.665 2.003 0.115s0.498-1.452-0.115-2.003zM6 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"></path>
+                        </svg>
+                    </button>
                 </div>
                 <!--  -->
-                <div class="weather">
-                    <h2 class="city">-</h2>
-                    <h1 class="temp">.</h1>
+                <div class="weather loading">
+                    <h2 class="city">loading...</h2>
+                    <h1 class="temp">loading...</h1>
                     <div class="flex">
                         <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
-                        <div class="description">-</div>
+                        <div class="description">loading...</div>
                     </div>
-                    <div class="humidity">-</div>
-                    <div class="wind">-</div>
+                    <div class="humidity">loading...</div>
+                    <div class="wind">loading...</div>
                 </div>
                 <!--  -->
             </div>
