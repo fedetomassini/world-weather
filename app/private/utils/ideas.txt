@@ -1,8 +1,0 @@
-1) background dependiendo de la ubicacion (ej= tokyo= fondo de tokyo)✅
-2) nueva paleta de colores✅ 
-3) alinear el weather loading ✅
-4) queries (phone, tablet) ✅ 
-
-5) mas informacion acerca del clima ==> (pronostico por hora, hora del atardecer) 
-6 radar ==> mapa que se enlace a la ubicacion
-7) mejorar titulo, +visibilidad ( que no se pierda con el fondo)
