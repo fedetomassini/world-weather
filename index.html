@@ -29,18 +29,22 @@
     <script src="https://kit.fontawesome.com/b9667d8e6a.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.3/dist/sweetalert2.all.min.js"></script>
     <!--  -->
-    <title>World Weather | a-0.1.2</title>
+    <title>World Weather | a-0.1.5</title>
 </head>
 <body>
+    <div class="bar">
+        <p id="switchLanguageBar">
+            <a href="/index.html"><img src="./base/docs/assets/web/icon/webicon_512px.png" height="30"/></a>
+            <span status="disabled">|</span>
+            <span language="english">EN</span>
+            <span language="spanish">ES</span>
+            <span language="japanese">日本</span>
+            <span status="disabled">|</span>
+            <span class="web-version">version a-0.1.5</span>
+        </p>
+    </div>
     <section class="web-titles">
-        <h1 class="main-title"><i class="fa-solid fa-umbrella"></i> World Weather <i class="fa-solid fa-umbrella"></i></h1>
-    </section>
-    <section class="languagesBox">
-        <div class="languageSelector box">
-            <button class="languageSelector"><i class="fa-solid fa-earth-americas fa-2x"></i></button>
-            <button class="languageSelector langs spanish" type="button"><span class="fi fi-es"></span></button>
-            <button class="languageSelector langs english" type="button"><span class="fi fi-us"></span></button>
-        </div>
+        <h1 class="main-title"><i class="fa-solid fa-umbrella"></i> World Weather <i class="fa-solid fa-umbrella"></i></h1> 
     </section>
     <!-- Boxs  -->
     <section class="contents-darkgray">
@@ -56,14 +60,14 @@
                 </div>
                 <!--  -->
                 <div class="weather loading">
-                    <h2 class="city">loading...</h2>
-                    <h1 class="temp">loading...</h1>
+                    <h2 class="city text">loading...</h2>
+                    <h1 class="temp text">loading...</h1>
                     <div class="flex">
                         <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
-                        <div class="description">loading...</div>
+                        <div class="description text">loading...</div>
                     </div>
-                    <div class="humidity">loading...</div>
-                    <div class="wind">loading...</div>
+                    <div class="humidity text">loading...</div>
+                    <div class="wind text">loading...</div>
                 </div>
                 <!--  -->
             </div>

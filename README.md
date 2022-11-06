@@ -7,14 +7,22 @@
 ---
 
 ### Current Version
-+ a-0.1.2
++ a-0.1.5
 
 ---
 
 #### Changelog:
+
+###### 06/11/2022 - [v-a-0.1.5]
++ Language Selector (spanish, english and japanese).
++ Changes to the main title (not finished).
++ Fixed some output logs.
+
+---
+
 ###### 05/11/2022 - [v-a-0.1.2]
 + Partially fixed a bug that showed images of different things when using the search bar.
-+ More outputs logs have been added to the dev console.
++ More output logs have been added to the dev console.
 + Other minor changes.
 
 ---

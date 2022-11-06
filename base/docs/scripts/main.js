@@ -19,8 +19,9 @@ let weather = {
                         heightAuto: true,
                         width: 425,
                     });
-                    console.groupCollapsed("Invalid entry");
+                    console.groupCollapsed("%cInvalid entry", 'background: rgba(2, 2, 2, 0.486); color: #0E5E6F');
                     console.log("⤷" + " " + city + " is not a city");
+                    console.groupEnd();
                 }
                 return response.json();
             })
@@ -49,8 +50,45 @@ let weather = {
         $(".wind").html("Wind Speed: " + speed + " km/h");
         document.querySelector(".weather").classList.remove("loading");
         document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?+" + name + "+city+')";
-        console.groupCollapsed("City found correctly");
+        console.groupCollapsed("%cCity found correctly", 'background: rgba(2, 2, 2, 0.486); color: #4E6C50');
         console.log("⤷" + " " + name);
+        console.groupEnd();
+
+        /// Language Selector ///
+        var defaultLanguage = "english";
+        var jsonUrl = "https://api.npoint.io/74e8bbb2852981230f9e";
+        var barEl = document.getElementById("switchLanguageBar");
+
+        getData(defaultLanguage);
+        barEl.addEventListener("click", handleLanguage);
+        console.groupCollapsed("%cLanguage Selector", 'background: rgba(2, 2, 2, 0.486); color: #0E5E6F');
+        console.log("⤷ " + "The default language is " + "%c" + defaultLanguage, 'background: rgba(2, 2, 2, 0.486); color: #E0144C');
+        console.groupEnd();
+
+        //=== function kits ===
+        function getData(language) {
+        var url = jsonUrl + "/" + language;
+        $('.weather text').fadeOut();
+        $.getJSON(url, function(data) {
+            renderView(data);
+        });
+        }
+
+        function renderView(data){
+            $('.search-bar').attr('placeholder', data.placeholder);
+            $(".humidity").html(data.humidity + humidity + "%");
+            $(".wind").html(data.wind + speed + " km/h");
+        }
+
+        function handleLanguage(event) {
+            var attr = event.target.getAttribute("language");
+            if (attr) {
+                getData(attr);
+                console.groupCollapsed("%cLanguage Selector", 'background: rgba(2, 2, 2, 0.486); color: #0E5E6F');
+                console.log("⤷ " + "Website language changed to " + "%c" + attr, 'background: rgba(2, 2, 2, 0.486); color: #E0144C');
+                console.groupEnd();
+            }
+        }
     },
     search: function(){
         this.fetchWeather(document.querySelector(".search-bar").value);
