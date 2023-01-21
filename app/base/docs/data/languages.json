@@ -1,0 +1,20 @@
+{
+    "english": {
+        "placeholder": "Search a city...",
+        "description": "",
+        "humidity": "Humidity: ",
+        "wind": "Wind Speed: "
+},
+    "spanish": {
+        "placeholder": "Busca una ciudad...",
+        "description": "",
+        "humidity": "Humedad: ",
+        "wind": "Velocidad del viento: "
+},
+    "japanese": {
+        "placeholder": "都市を探す...",
+        "description": "",
+        "humidity": "しっけ: ",
+        "wind": "風速: "
+    }
+}

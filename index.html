@@ -6,10 +6,10 @@
     <meta name="language" content="en">
     <meta name="distribution" content="global">
     <meta name="rating" content="general">
-    <meta name="publisher" content="worldweather.web.app">
-    <link name="canonical" content="https://worldweather.web.app/">
-    <meta itemprop="url" content="https://worldweather.web.app/">
-    <meta property="og:url" content="https://worldweather.web.app/">
+    <meta name="publisher" content="worldweather.vercel.app">
+    <link name="canonical" content="https://worldweather.vercel.app/">
+    <meta itemprop="url" content="https://worldweather.vercel.app/">
+    <meta property="og:url" content="https://worldweather.vercel.app/">
     <meta name="description" content="Weather in the entire world">
     <meta name="keywords" content="weather, world weather, rain, storm">
     <meta property="og:type" content="website">
@@ -20,38 +20,34 @@
     <meta name="application-name" content="World Weather">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--  -->
-    <link rel="preload" href="./base/docs/assets/web/icon/web_icon.ico" as="icon">
-    <link rel="preload" href="./base/docs/stylesheets/main.css" as="style">
-    <link rel="icon" href="./base/docs/assets/web/icon/web_icon.ico">
-    <link rel="stylesheet" href="./base/docs/stylesheets/main.css" as="style">
+    <link rel="preload" href="././app/base/docs/assets/web/icon/icon.ico" as="icon">
+    <link rel="preload" href="././app/base/docs/stylesheets/main.css" as="style">
+    <link rel="icon" href="./app/base/docs/assets/web/icon/icon.ico">
+    <link rel="stylesheet" href="././app/base/docs/stylesheets/main.css" as="style">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
     <!--  -->
-    <script src="https://kit.fontawesome.com/b9667d8e6a.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.3/dist/sweetalert2.all.min.js"></script>
     <!--  -->
-    <title>World Weather | a-0.1.5</title>
+    <title>World Weather</title>
 </head>
 <body>
     <div class="bar">
         <p id="switchLanguageBar">
-            <a href="/index.html"><img src="./base/docs/assets/web/icon/webicon_512px.png" height="30"/></a>
-            <span status="disabled">|</span>
             <span language="english">EN</span>
-            <span language="spanish">ES</span>
-            <span language="japanese">日本</span>
             <span status="disabled">|</span>
-            <span class="web-version">version a-0.1.5</span>
+            <span language="spanish">ES</span>
+            <span status="disabled">|</span>
+            <span language="japanese">日本</span>
+        </p>
+        <p id="extraThings">
+            <span class="web-version">a-0.2</span>     
         </p>
     </div>
-    <section class="web-titles">
-        <h1 class="main-title"><i class="fa-solid fa-umbrella"></i> World Weather <i class="fa-solid fa-umbrella"></i></h1> 
-    </section>
-    <!-- Boxs  -->
     <section class="contents-darkgray">
         <!--  -->
             <div class="card">
                 <div class="search">
-                    <input type="text" class="search-bar" placeholder="Search a city...">
+                    <input type="text" class="search-bar" placeholder="Loading...">
                     <button class="search button">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.504 13.616l-3.79-3.223c-0.392-0.353-0.811-0.514-1.149-0.499 0.895-1.048 1.435-2.407 1.435-3.893 0-3.314-2.686-6-6-6s-6 2.686-6 6 2.686 6 6 6c1.486 0 2.845-0.54 3.893-1.435-0.016 0.338 0.146 0.757 0.499 1.149l3.223 3.79c0.552 0.613 1.453 0.665 2.003 0.115s0.498-1.452-0.115-2.003zM6 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"></path>
@@ -60,19 +56,19 @@
                 </div>
                 <!--  -->
                 <div class="weather loading">
-                    <h2 class="city text">loading...</h2>
-                    <h1 class="temp text">loading...</h1>
+                    <h2 class="city text"></h2>
+                    <h1 class="temp text"></h1>
                     <div class="flex">
-                        <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
-                        <div class="description text">loading...</div>
+                        <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon"/>
+                        <div class="description text"></div>
                     </div>
-                    <div class="humidity text">loading...</div>
-                    <div class="wind text">loading...</div>
+                    <div class="humidity text"></div>
+                    <div class="wind text"></div>
                 </div>
                 <!--  -->
             </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
-    <script src="./base/docs/scripts/main.js" type="module"></script>
+    <script src="././app/base/docs/scripts/main.js" type="module"></script>
 </body>
 </html>
