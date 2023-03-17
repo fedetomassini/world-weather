@@ -1,0 +1,94 @@
+/* # -- CSS for WeatherContainer.jsx -- # */
+
+section.contents-darkgray{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 530px;
+    margin-top: 45px;
+    background-color: transparent;
+}
+
+div.card{
+    background-color: rgba(32, 38, 46, 0.75);
+    padding: 3em 3em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    box-shadow: -5px 19px 19px 10px rgba(2, 2, 2, 0.486);
+    margin-top: -30px;
+}
+
+div.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.search-button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    background: #7c7c7c2b;
+    color: #F6ECF0;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+button.search-button:hover {
+    background: #bab5b56b;
+}
+  
+input.search-bar {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    background: #7c7c7c2b;
+    color: #F6ECF0;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(100% - 100px);
+}
+input.search-bar:focus{
+    color: #CD5D7D;
+}
+
+div.weather{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.weather.loading{
+    display: none;
+    max-height: max-content;
+}
+
+div.weather.loading:after{
+    display: content;
+}
+
+h2.city{
+    margin-top: 30px;
+}
+
+h1.temp {
+    margin: 0;
+    margin-bottom: 0.4em;
+    font-size: 50px;
+}
+
+div.flex {
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+}
+  
+div.description {
+    text-transform: capitalize;
+    margin-left: 8px;
+}

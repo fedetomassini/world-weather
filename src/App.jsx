@@ -11,14 +11,14 @@ function App(){
         <section>
             <div className="bar">
                 <p id="switchLanguageBar">
-                    <span language="english"><img src={us}/></span>
+                    <span><img language="english" src={us}/></span>
                     <span status="disabled">|</span>
-                    <span language="spanish"><img src={es}/></span>
+                    <span><img language="spanish" src={es}/></span>
                     <span status="disabled">|</span>
-                    <span language="japanese"><img src={jp}/></span>
+                    <span><img language="japanese" src={jp}/></span>
                 </p>
                 <p id="extraThings">
-                    <span className="web-version">a-0.2.6</span>     
+                    <span className="web-version">a-0.2.7</span>     
                 </p>
             </div>
             {/*  */}

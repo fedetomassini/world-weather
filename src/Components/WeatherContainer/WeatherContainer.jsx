@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
-import '../../assets/styles/App.css';
+import '../../Components/WeatherContainer/WeatherContainer.css';
 
 function WeatherContainer(){
     
     const weather = {
-        apiKey: "3d994194a19803fe3ef7b54575b7d110",
+        apiKey: "3d994194a19803fe3ef7b54575b7d110", /* -- test apiKey -- */
         defaultLanguage: "english",
         jsonUrl: "https://api.npoint.io/2c7544407e4a00ec3345",
         
@@ -25,16 +25,17 @@ function WeatherContainer(){
         displayWeather: function(data) {
             const { name } = data;
             const { icon, description } = data.weather[0];
-            const { temp, humidity } = data.main;
+            const { temp, humidity, pressure } = data.main;
             const { speed } = data.wind;
+            const clouds = data.clouds.all;
             this.setBackgroundImage(name);
-            this.renderWeatherData(name, icon, description, temp, humidity, speed);
+            this.renderWeatherData(name, icon, description, temp, humidity, speed, pressure, clouds);
         },
         
-        renderWeatherData: function(name, icon, description, temp, humidity, speed) {
+        renderWeatherData: function(name, icon, description, temp, humidity, speed, pressure, clouds) {
             const barEl = document.getElementById("switchLanguageBar");
             barEl.addEventListener("click", this.handleLanguage);
-            this.getData(this.defaultLanguage, { name, icon, description, temp, humidity, speed });
+            this.getData(this.defaultLanguage, { name, icon, description, temp, humidity, speed, pressure, clouds});
         },
         
         getData: function(language, data) {
@@ -51,6 +52,8 @@ function WeatherContainer(){
             $('.search-bar').attr('placeholder', datalang.placeholder);
             $(".humidity").html(`${datalang.humidity}${data.humidity}%`);
             $(".wind").html(`${datalang.wind}${data.speed} km/h`);
+            $(".pressure").html(`${datalang.pressure}${data.pressure} hpa`);
+            $(".clouds").html(`${datalang.clouds}${data.clouds}%`);
             document.querySelector(".weather").classList.remove("loading");
         },
         
@@ -100,7 +103,6 @@ function WeatherContainer(){
         }
     };
 
-      
     // Default City/Country //
     weather.fetchWeather("Japan");
 
@@ -128,6 +130,8 @@ function WeatherContainer(){
                     </div>
                     <div className="humidity text"></div>
                     <div className="wind text"></div>
+                    <div className='pressure text'></div>
+                    <div className='clouds text'></div>
                 </div>
                 {/*  */}
             </div>
