@@ -18,7 +18,7 @@ function App(){
                     <span language="japanese"><img src={jp}/></span>
                 </p>
                 <p id="extraThings">
-                    <span className="web-version">a-0.2.2</span>     
+                    <span className="web-version">a-0.2.6</span>     
                 </p>
             </div>
             {/*  */}
