@@ -1,0 +1,8 @@
+## --- .gitignore World Weather -- ## 
+
+#dependencies
+/node_modules
+
+#misc
+/private
+*.code-workspace
