@@ -15,7 +15,48 @@
 
 ### Current Version
 ```sh
-a-0.2.7 | 17/03/2023
+a-0.3 | 20/03/2023
 ```
 ---
 
+### Language Support List:
+| Language         |   Added  |
+|------------------|----------|
+| Arabic           |    X     |
+| Bulgarian        |    X     |
+| Catalan          |    X     |
+| Czech            |    X     |
+| Danish           |    X     |
+| German           |    X     |
+| Greek            |    X     |
+| English          |    ✓     |
+| Persian          |    X     |
+| Finnish          |    X     |
+| French           |    X     |
+| Galician         |    X     |
+| Hindi            |    X     |
+| Croatian         |    X     |
+| Hungarian        |    X     |
+| Indonesian       |    X     |
+| Italian          |    X     |
+| Japanese         |    ✓     |
+| Korean           |    X     |
+| Latvian          |    X     |
+| Lithuanian       |    X     |
+| Macedonian       |    X     |
+| Norwegian        |    X     |
+| Dutch            |    X     |
+| Polish           |    X     |
+| Portuguese       |    X     |
+| Romanian         |    X     |
+| Russian          |    X     |
+| Serbian          |    X     |
+| Slovak           |    X     |
+| Slovenian        |    X     |
+| Spanish          |    ✓     |
+| Swedish          |    X     |
+| Thai             |    X     |
+| Turkish          |    X     |
+| Ukrainian        |    X     |
+| Vietnamese       |    X     |
+| Chinese          |    X     |
