@@ -22,15 +22,11 @@ div.bar p#extraThings{
 
 div.bar span {
     margin-right: 2px;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 div.bar span:last-child {
     margin-right: 0px;
-}
-
-div.bar span:hover {
-    color: #CD5D7D;
 }
 
 div.bar span.web-version{
@@ -41,7 +37,7 @@ div.bar span.web-version{
 
 div.bar span.web-version:hover{
     cursor: default;
-    color: #CD5D7D;
+    color: aquamarine;
 }
 
 span[status=disabled]:hover{

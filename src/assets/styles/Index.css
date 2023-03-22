@@ -10,13 +10,13 @@ font-family: 'Alata', sans-serif; -> All
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
+    width: 2px;
 }
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgba(246 117 168 / 70%);
+    background-color: rgba(32, 38, 46, 0.75);
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(246 117 168 / 65%);
+    background-color: aquamarine;
     border-radius: 5px;
 }
 

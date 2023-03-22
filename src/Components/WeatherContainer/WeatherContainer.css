@@ -48,13 +48,13 @@ input.search-bar {
     padding: 0.4em 1em;
     border-radius: 24px;
     background: #7c7c7c2b;
-    color: #F6ECF0;
+    color: aquamarine;
     font-family: inherit;
     font-size: 105%;
     width: calc(100% - 100px);
 }
 input.search-bar:focus{
-    color: #CD5D7D;
+    color: aquamarine;
 }
 
 div.weather{

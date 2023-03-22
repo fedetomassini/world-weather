@@ -1,0 +1,82 @@
+/* # -- CSS for Changelog.jsx -- # */
+
+body.changelog{
+    background-image: url(/src/assets/images/changelog-background.png);
+    /* background-color: rgba(32, 38, 46, 0.965); */
+}
+
+.contents-changelog{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+}
+
+.changelog-container{
+    width: 100%;
+    max-width: 420px;
+    padding: 3em 3em;
+    margin: 1em;
+    border-radius: 30px;
+    background-color: rgba(32, 38, 46, 0.75);
+    box-shadow: -5px 19px 19px 10px rgba(2, 2, 2, 0.186);
+}
+
+#changelog-title{
+    font-size: 30pt;
+    text-decoration: none;
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 20px;
+}
+
+.log-date{
+    margin-left: -15px;
+    text-align: left;
+    font-size: 9pt;
+}
+
+.log-version{
+    color: aquamarine;
+}
+
+.log-item{
+    margin-top: 10px;
+    text-align: left;
+    font-size: 11pt;
+    list-style-type: square;
+}
+
+#advise{
+    text-align: center;
+    font-size: 9pt;
+    text-decoration: underline;
+}
+
+div#buttonContainer{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+
+.backButton{
+    margin-top: 20px;
+    margin-bottom: -30px;
+    padding: 10px;
+    min-width: 50px;
+    max-width: 100px;
+    border: none;
+    background-color: transparent;
+}
+.backButton i:hover{
+    color: aquamarine !important;
+    cursor: pointer;
+}
+
+hr{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
