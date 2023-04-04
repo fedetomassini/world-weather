@@ -4,7 +4,7 @@ import '../../Components/WeatherContainer/WeatherContainer.css';
 function WeatherContainer(){
     
     const weather = {
-        apiKey: "3d994194a19803fe3ef7b54575b7d110", /* -- test apiKey -- */
+        apiKey: process.env.REACT_APP_API_KEY, // [https://stackoverflow.com/questions/70855580/module-not-found-error-cant-resolve-fs-in-dotenv-lib] \\
         defaultLanguage: "english",
         jsonUrl: "https://api.npoint.io/2c7544407e4a00ec3345",
         messages: {
@@ -68,9 +68,9 @@ function WeatherContainer(){
             $.getJSON(url, datalang => this.renderView(data, datalang));
         },
         
-        renderView: function(data, datalang) {
+        renderView: function(data, datalang) {   
             $('.city').html(data.name);
-            $('.icon').html(`https://openweathermap.org/img/wn/${data.icon}.png`);
+            $('.icon').attr('src', `https://openweathermap.org/img/wn/${data.icon}.png`);
             $('.description').html(data.description);
             $('.temp').html(`${data.temp}°C`);
             $('.search-bar').attr('placeholder', datalang.placeholder);
@@ -145,7 +145,7 @@ function WeatherContainer(){
 
     return(
         <section className="contents-darkgray">
-            <div className="card">
+            <div className="card-weather">
                 {/*  */}
                 <div className="search">
                     <input type="text" className="search-bar" placeholder="..." ref={searchBarRef} onKeyUp={handleSearchKeyUp}/>
@@ -160,7 +160,7 @@ function WeatherContainer(){
                     <h2 className="city text"></h2>
                     <h1 className="temp text"></h1>
                     <div className="flex">
-                        <img src="https://openweathermap.org/img/wn/04n.png" alt="" className="icon"/>
+                        <img src='' alt="" className="icon"/>
                         <div className="description text"></div>
                     </div>
                     <div className="humidity text"></div>

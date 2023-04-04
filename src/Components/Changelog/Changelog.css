@@ -16,7 +16,7 @@ body.changelog{
 
 .changelog-container{
     width: 100%;
-    max-width: 420px;
+    max-width: 520px;
     padding: 3em 3em;
     margin: 1em;
     border-radius: 30px;
@@ -39,11 +39,11 @@ body.changelog{
 }
 
 .log-version{
-    color: aquamarine;
+    color: #FEBE8C !important;
 }
 
 .log-item{
-    margin-top: 10px;
+    margin-top: 15px;
     text-align: left;
     font-size: 11pt;
     list-style-type: square;
@@ -61,21 +61,8 @@ div#buttonContainer{
     align-items: right;
 }
 
-.backButton{
-    margin-top: 20px;
-    margin-bottom: -30px;
-    padding: 10px;
-    min-width: 50px;
-    max-width: 100px;
-    border: none;
-    background-color: transparent;
-}
-.backButton i:hover{
-    color: aquamarine !important;
-    cursor: pointer;
-}
-
 hr{
+    margin-top: -15px;
     margin-left: auto;
     margin-right: auto;
     width: 70%;

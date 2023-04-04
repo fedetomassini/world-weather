@@ -5,3 +5,7 @@
 
 #misc
 /private
+
+
+#others
+/.env

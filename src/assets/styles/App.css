@@ -1,46 +1,52 @@
-
-
 /* # -- CSS for App.jsx -- # */
 
-div.bar {
-    padding: 7px 25px;
-    background-color: rgba(32, 38, 46, 0.75);
-    color: #999;
-    box-sizing: border-box;
+nav.navbar{
+    color: #999 !important;
+    background-color: rgba(32, 38, 46, 0.75) !important;
+    box-sizing: border-box; 
 }
 
-div.bar p#switchLanguageBar{
-    display: flex;
-    justify-content: flex-start;
+.nav-link:hover{
+    color: #68B984 !important;
+}
+.nav-link.show{
+    color: #68B984 !important;
 }
 
-div.bar p#extraThings{
-    float: right;
-    margin-top: -23px;
-    text-align: end;
+.dropdown-menu{
+    z-index: 2 !important;
+    background-color: rgba(32, 38, 46, 0.75) !important;
 }
 
-div.bar span {
-    margin-right: 2px;
+.dropdown-item{
+    color: #999 !important;
+}
+
+.dropdown-item:hover{
+    color: #68B984 !important;
+    background-color: rgba(32, 38, 46, 0.75) !important;
+}
+
+.dropdown-item.enabled{
     cursor: pointer !important;
+    color: #FFF6BD !important;
 }
 
-div.bar span:last-child {
-    margin-right: 0px;
+.dropdown-item.disabled{
+    cursor: not-allowed !important;
+    color: rgba(255, 255, 255, 0.25) !important;
 }
 
-div.bar span.web-version{
-	margin-right: -10px;
-    color: #999;
-    display: inline-block;
+.web-version{
+    color: #FEBE8C !important;
 }
 
-div.bar span.web-version:hover{
-    cursor: default;
-    color: aquamarine;
+.web-version:hover{
+    color: #FFF6BD !important;
 }
 
-span[status=disabled]:hover{
-  color: #999;
-  cursor: default;
+@media screen and (max-width: 992px){
+    .nav-link{
+        text-align: center !important;
+    }
 }

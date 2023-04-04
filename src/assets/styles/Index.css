@@ -16,15 +16,15 @@ font-family: 'Alata', sans-serif; -> All
     background-color: rgba(32, 38, 46, 0.75);
 }
 ::-webkit-scrollbar-thumb {
-    background-color: aquamarine;
+    background-color: #68B984;
     border-radius: 5px;
 }
 
 body{
     margin: 0;
     cursor: default;
-    color: #fff;
-    background-color: #20262E;
+    color: #fff !important;
+    background-color: #20262E !important;
     font-family: 'Alata', sans-serif;
     animation-name: example;
     animation-duration: 80s;
