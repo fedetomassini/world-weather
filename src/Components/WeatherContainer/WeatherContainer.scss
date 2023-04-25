@@ -1,5 +1,10 @@
 /* # -- CSS for WeatherContainer.jsx -- # */
 
+@import '../../assets/styles/Index.scss';
+
+$textColor_default: #F6ECF0;
+$textColor_values: #FFDEB4;
+
 section.contents-darkgray{
     display: flex;
     justify-content: center;
@@ -10,7 +15,7 @@ section.contents-darkgray{
 }
 
 div.card-weather{
-    background-color: rgba(32, 38, 46, 0.75) !important;
+    background-color: $backgroundColor_darkmode !important;
     padding: 3em 3em;
     border-radius: 30px;
     width: 100%;
@@ -34,12 +39,17 @@ button.search-button {
     width: 44px;
     outline: none;
     background: #7c7c7c2b !important;
-    color: #F6ECF0 !important;
+    color: $textColor_default !important;
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
 button.search-button:hover {
-    background: #bab5b56b;
+    background: #1e1e1e !important;
+}
+
+svg{
+    margin-top: -6.5px;
+    vertical-align: middle;
 }
   
 input.search-bar {
@@ -48,17 +58,17 @@ input.search-bar {
     padding: 0.4em 1em;
     border-radius: 24px;
     background: #7c7c7c2b !important;
-    color: #68B984 !important;
+    color: $textColor_default !important;
     font-family: inherit;
     font-size: 105%;
     width: calc(100% - 100px);
 }
 input.search-bar:focus{
-    color: #68B984 !important;
+    color: $textColor_default !important;
 }
 
 div.weather{
-    color: #fff !important;
+    color: $textColor_default !important;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -84,6 +94,17 @@ h1.temp {
     margin: 0;
     margin-bottom: 0.4em;
     font-size: 50px;
+    color: $textColor_values;
+}
+
+div.min_max{
+    margin-top: -15px !important;
+    margin-bottom: 5px !important;
+    display: inline-block !important;
+}
+
+span.temp_min, span.temp_max{
+    color: $textColor_values;
 }
 
 div.flex {

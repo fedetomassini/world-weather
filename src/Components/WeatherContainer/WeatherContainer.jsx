@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
-import '../../Components/WeatherContainer/WeatherContainer.css';
+import '../../Components/WeatherContainer/WeatherContainer.scss';
+import { json } from 'react-router-dom';
 
 function WeatherContainer(){
     
@@ -7,16 +8,10 @@ function WeatherContainer(){
         apiKey: process.env.REACT_APP_API_KEY, // [https://stackoverflow.com/questions/70855580/module-not-found-error-cant-resolve-fs-in-dotenv-lib] \\
         defaultLanguage: "english",
         jsonUrl: "https://api.npoint.io/2c7544407e4a00ec3345",
-        messages: {
-            english: {
-                languageChanged: 'Language changed, reload the website!'
-            },
-            japanese: {
-                languageChanged: '言語が変更されました、ウェブサイトをリロードしてください！'
-            },
-            spanish: {
-                languageChanged: '¡Idioma cambiado, recarga el sitio web!'
-            }
+        languageMessages: {
+            english: {message: 'Language changed, reloading website!'},
+            spanish: {message: '¡Idioma modificado, recargando el sitio web!'},
+            japanese: {message: '言語が変更され、ウェブサイトを再読み込みしています！'}
         },
         
         fetchWeather: function(city) {
@@ -30,7 +25,7 @@ function WeatherContainer(){
             fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${langCode}&units=metric&appid=${this.apiKey}`)
             .then(response => {
                 if (!response.ok) {
-                    this.showAlert("No weather found! Try another");
+                    this.InvalidLocation("No weather found! Try another");
                     throw new Error("Invalid entry");
                 }
               return response.json();
@@ -43,22 +38,22 @@ function WeatherContainer(){
         displayWeather: function(data) {
             const { name } = data;
             const { icon, description } = data.weather[0];
-            const { temp, humidity, pressure } = data.main;
+            const { temp, temp_min, temp_max,  humidity, pressure } = data.main;
             const { speed } = data.wind;
             const clouds = data.clouds.all;
             this.setBackgroundImage(name);
-            this.renderWeatherData(name, icon, description, temp, humidity, speed, pressure, clouds);
+            this.renderWeatherData(name, icon, description, temp, temp_min, temp_max, humidity, speed, pressure, clouds);
         },
         
-        renderWeatherData: function(name, icon, description, temp, humidity, speed, pressure, clouds) {
+        renderWeatherData: function(name, icon, description, temp, temp_min, temp_max, humidity, speed, pressure, clouds) {
             const barEl = document.getElementById("switchLanguageBar");
-            barEl.addEventListener("click", this.handleLanguage);
+            barEl.addEventListener("click", this.LanguageChanged);
             
             const storedLanguage = localStorage.getItem("language");
             if (storedLanguage) {
-                this.getData(storedLanguage, { name, icon, description, temp, humidity, speed, pressure, clouds});
+                this.getData(storedLanguage, { name, icon, description, temp, temp_min, temp_max, humidity, speed, pressure, clouds});
             } else {
-                this.getData(this.defaultLanguage, { name, icon, description, temp, humidity, speed, pressure, clouds});
+                this.getData(this.defaultLanguage, { name, icon, description, temp, temp_min, temp_max, humidity, speed, pressure, clouds});
             }
         },
         
@@ -73,6 +68,8 @@ function WeatherContainer(){
             $('.icon').attr('src', `https://openweathermap.org/img/wn/${data.icon}.png`);
             $('.description').html(data.description);
             $('.temp').html(`${data.temp}°C`);
+            $('.temp_min').html(`${data.temp_min}°C`);
+            $('.temp_max').html(`${data.temp_max}°C`);
             $('.search-bar').attr('placeholder', datalang.placeholder);
             $(".humidity").html(`${datalang.humidity}${data.humidity}%`);
             $(".wind").html(`${datalang.wind}${data.speed} km/h`);
@@ -85,26 +82,32 @@ function WeatherContainer(){
             document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}+city')`;
         },
         
-        handleLanguage: function(event) {
+        LanguageChanged: function(event) {
             const attr = event.target.getAttribute("language");
-            if (attr){
-                localStorage.setItem("language", attr);
-                Swal.fire({
-                    icon: 'info',
-                    text: weather.messages[attr].languageChanged,
-                    showConfirmButton: false,
-                    timer: 2750,
-                    timerProgressBar: true,
-                    allowEscapeKey: false,
-                    allowEnterKey: false,
-                    allowOutsideClick: false,
-                    heightAuto: true,
-                    width: 425,
-                });
+            if (attr) {
+              localStorage.setItem("language", attr);
+              Swal.fire({
+                icon: 'info',
+                /* text: weather.jsonUrl/attr/["message"], */
+                text: weather.languageMessages[attr].message,
+                showConfirmButton: false,
+                timer: 2750,
+                timerProgressBar: true,
+                allowEscapeKey: false,
+                allowEnterKey: false,
+                allowOutsideClick: false,
+                heightAuto: true,
+                width: 425,
+                background: "#1e1e1e",
+                color: "#F6ECF0"
+              });
+              setTimeout(() => {
+                location.reload();
+              }, 2750);
             }
         },
         
-        showAlert: function(message) {
+        InvalidLocation: function(message) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -117,7 +120,9 @@ function WeatherContainer(){
                 allowOutsideClick: false,
                 heightAuto: true,
                 width: 425,
-            });
+                background: "#1e1e1e",
+                color: "#F6ECF0"
+            }); 
         },
         
         search: function() {
@@ -159,6 +164,7 @@ function WeatherContainer(){
                 <div className="weather loading">
                     <h2 className="city text"></h2>
                     <h1 className="temp text"></h1>
+                    <div className='min_max'>MIN: <span className='temp_min'></span> {"|"} MAX: <span className='temp_max'></span></div>
                     <div className="flex">
                         <img src='' alt="" className="icon"/>
                         <div className="description text"></div>

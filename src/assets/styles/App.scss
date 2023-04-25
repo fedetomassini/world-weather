@@ -1,0 +1,91 @@
+/* # -- CSS for App.jsx -- # */
+
+@import '../styles/Index.scss';
+@import '../../Components/WeatherContainer/WeatherContainer.scss';
+
+$textColor_hover: #68B984;
+
+$TextColor_enabledLanguageHover: #FEBE8C;
+$textColor_enabledLanguage: $textColor_values;
+$textColor_disabledLanguage: #999;
+
+/*  */
+
+nav.navbar{
+    color: $textColor_disabledLanguage !important;
+    background-color: $backgroundColor_darkmode !important;
+    box-sizing: border-box;
+}
+
+.nav-link:hover{
+    color: $textColor_hover !important;
+}
+
+.nav-link.show{
+    color: $textColor_hover !important;
+}
+
+li.dropdown{
+    position: initial;
+}
+
+.dropdown-menu{
+    width: 100%;
+}
+
+.dropdown-menu > li{
+    display: table-cell;
+}
+
+.dropdown-menu.show{
+    z-index: 999;
+    margin-top: 0px;
+    border: none;
+    border-radius: 0px;
+    background-color: $backgroundColor_darkmode !important;
+}
+
+.dropdown-toggle:after{
+    vertical-align: .135em;
+}
+
+.dropdown-item{
+    color: $textColor_disabledLanguage !important;
+}
+
+.dropdown-item.enabled{
+    color: $textColor_enabledLanguage !important;
+}
+
+.dropdown-item.disabled{
+    text-decoration-line: line-through;
+    text-decoration-style: double;
+    color: $textColor_disabledLanguage !important;
+}
+
+.dropdown-item.enabled:hover{
+    color: $TextColor_enabledLanguageHover !important;
+}
+
+.dropdown-item:hover{
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.web-version{
+    color: #FFDEB4 !important;
+}
+
+.web-version:hover{
+    color: #FFF6BD !important;
+}
+
+
+@media screen and (max-width: 992px){
+    .navbar-nav .dropdown-menu{
+        position: absolute !important;
+    }
+    .nav-link{
+        text-align: center !important;
+    }
+}

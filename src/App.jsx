@@ -1,20 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import us from './assets/images/countries/us.png'
-import es from './assets/images/countries/es.png';
-import jp from './assets/images/countries/jp.png';
+// import us from './assets/images/countries/us.png'
+// import es from './assets/images/countries/es.png';
+// import jp from './assets/images/countries/jp.png';
 import webLogo from './assets/images/web-logo.png';
 
-import './assets/styles/App.css';
+import './assets/styles/App.scss';
 
 import WeatherContainer from './Components/WeatherContainer/WeatherContainer';
-import Changelog from './Components/Changelog/Changelog';
 import Radar from "./Components/Radar/Radar";
 
 function App(){
-
-    const webVersion = "[a-0.3.2]"
 
     return(
         <Router>
@@ -28,11 +25,13 @@ function App(){
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item"><Link to={'/'} className="nav-link" aria-current="page">Home</Link></li>
-                                <li className="nav-item dropdown"><Link to={''} className="nav-link dropdown-toggle disabled" role="button" data-bs-toggle="dropdown" aria-expanded="false">Extra</Link>
+                                <li className="nav-item dropdown"><Link to={''} className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Extra</Link>
                                     <ul className="dropdown-menu">
-                                        <li><Link to={'/radar'} className="dropdown-item">Radar</Link></li>
-                                        <li><Link to={''} className="dropdown-item">Coming soon...</Link></li>
-                                        <li><Link to={''} className="dropdown-item">Coming soon...</Link></li>
+                                        <li><Link to={''} className="dropdown-item disabled">Temperatures Radar</Link></li>
+                                        <li><Link to={''} className="dropdown-item disabled">Precipitations Radar</Link></li>
+                                        <li><Link to={''} className="dropdown-item disabled">Clouds Radar</Link></li>
+                                        <li><Link to={''} className="dropdown-item disabled">Wind Radar</Link></li>
+                                        <li><Link to={''} className="dropdown-item disabled">Pressure Radar</Link></li>
                                     </ul>
                                 </li>
                                 {/*  */}
@@ -78,15 +77,13 @@ function App(){
                                         <li><span className="dropdown-item disabled" language="chinese">Chinese</span></li>                    
                                     </ul>
                                 </li>
-                                <li className="nav-item ms-auto"><Link to={'/changelog'} className="nav-link web-version">{webVersion}</Link></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
                 <Routes>
-                    <Route path="/changelog" element={<Changelog/>}/>
-                    <Route path="/radar" element={<Radar/>}/>
                     <Route path="/" element={<WeatherContainer/>}/>
+                    {/* <Route path="/radar" element={<Radar/>}/> */} {/* Work In Progress */}
                 </Routes>
             </section>    
         </Router>       
