@@ -1,6 +1,6 @@
 {
   "name": "world-weather-app",
-  "version": "a-0.3.5",
+  "version": "a-0.3.5b",
   "scripts": {
     "start": "react-scripts start > private/dev_logs/log.txt 2>&1",
     "build": "react-scripts build",

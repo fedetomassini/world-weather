@@ -26,7 +26,7 @@ function App(){
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item"><Link to={'/'} className="nav-link" aria-current="page">Home</Link></li>
                                 <li className="nav-item dropdown"><Link to={''} className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Extra</Link>
-                                    <ul className="dropdown-menu">
+                                    <ul className="dropdown-menu" style={{maxHeight: '200px', overflowY: 'auto'}}>
                                         <li><Link to={''} className="dropdown-item disabled">Temperatures Radar</Link></li>
                                         <li><Link to={''} className="dropdown-item disabled">Precipitations Radar</Link></li>
                                         <li><Link to={''} className="dropdown-item disabled">Clouds Radar</Link></li>

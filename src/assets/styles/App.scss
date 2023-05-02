@@ -3,13 +3,13 @@
 @import '../styles/Index.scss';
 @import '../../Components/WeatherContainer/WeatherContainer.scss';
 
-$textColor_hover: #68B984;
+$textColor_hover: #49a569;
 
 $TextColor_enabledLanguageHover: #FEBE8C;
 $textColor_enabledLanguage: $textColor_values;
 $textColor_disabledLanguage: #999;
 
-/*  */
+// \\
 
 nav.navbar{
     color: $textColor_disabledLanguage !important;
@@ -79,6 +79,32 @@ li.dropdown{
 .web-version:hover{
     color: #FFF6BD !important;
 }
+
+// Changelog \\
+#HW_badge_cont{
+    content: url(../images/icons/notifications.png);
+    margin-right: 5px;
+    color: #FEBE8C;
+    z-index: 999;
+}
+
+#changelog{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 65px;
+}
+
+.HW_frame_cont{
+    width: 290px !important;
+    margin-top: 5px !important;    
+}
+
+
+
+
+
 
 
 @media screen and (max-width: 992px){
