@@ -9,7 +9,7 @@
   <p align="center">
    A weather search application that allows users to view current weather conditions in cities across the globe.
     <br />
-    <a href="https://github.com/macamonper/mercadito"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/fedetomassini/world-weather"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://worldweather-web.vercel.app">View Demo</a>
