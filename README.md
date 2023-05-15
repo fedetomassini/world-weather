@@ -1,20 +1,36 @@
-## 🌧️ World Weather 🌧️
 
-> A weather search application that allows users to view current weather conditions in cities across the globe.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/fedetomassini/world-weather">
+    <img src="public/web-icon512.png" alt="Logo" width="80" height="80">
+  </a>
+
+<h3 align="center">World Weather</h3>
+
+  <p align="center">
+   A weather search application that allows users to view current weather conditions in cities across the globe.
+    <br />
+    <a href="https://github.com/macamonper/mercadito"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://worldweather-web.vercel.app">View Demo</a>
+    ·
+    <a href="https://github.com/fedetomassini/world-weather/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/fedetomassini/world-weather/pulls">Request Feature</a>
+  </p>
+</div>
 
 ---
-![](https://cdn-icons-png.flaticon.com/128/2389/2389806.png)
-
 ![](https://img.shields.io/github/stars/fedetomassini/world-weather) 
 ![](https://img.shields.io/github/forks/fedetomassini/world-weather) 
-![](https://img.shields.io/github/tag/fedetomassini/world-weather)
-![](https://img.shields.io/github/release/fedetomassini/world-weather) 
-![](https://img.shields.io/github/issues/fedetomassini/world-weather) 
+![](https://img.shields.io/github/issues/fedetomassini/world-weather)
 
 ---
 
 ### Current Version
-```sh
+```txt
 a-0.3.5b | 02/05/2023
 ```
 ---
