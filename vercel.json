@@ -1,20 +1,12 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "public/**",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "server/index.js",
-            "use": "@vercel/node"
-        }
+        { "src": "public/**", "use": "@vercel/static" },
+        { "src": "server/index.js", "use": "@vercel/node" },
+        { "src": "build/**", "use": "@vercel/static" }
     ],
     "routes": [
         { "src": "/api/(.*)", "dest": "/server/index.js" },
-        { "src": "/static/(.*)", "dest": "/build/static/$1" },
-        { "src": "/webLogo.ico", "dest": "/build/webLogo.ico" },
         { "src": "/(.*)", "dest": "/build/index.html" }
     ]
 }
-  
