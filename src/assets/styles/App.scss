@@ -1,6 +1,5 @@
-/* # -- CSS for App.jsx -- # */
-
-@import '../styles/Index.scss';
+// # -- Styles for App -- # //
+@import '../Styles/Index.scss';
 @import '../../Components/WeatherContainer/WeatherContainer.scss';
 
 $textColor_hover: #49a569;
@@ -9,24 +8,36 @@ $TextColor_enabledLanguageHover: #FEBE8C;
 $textColor_enabledLanguage: $textColor_values;
 $textColor_disabledLanguage: #999;
 
-// \\
+/////////////////////////////////////////////////
 
-nav.navbar{
-    color: $textColor_disabledLanguage !important;
-    background-color: $backgroundColor_darkmode !important;
-    box-sizing: border-box;
+nav{
+    &.navbar{
+        color: $textColor_disabledLanguage !important;
+        background-color: $backgroundColor_darkmode !important;
+        box-sizing: border-box;
+    }
 }
 
-.nav-link:hover{
-    color: $textColor_hover !important;
+.nav-link{
+    &:hover{
+        color: $textColor_hover !important;
+    }
+    &.show{
+        color: $textColor_hover !important;
+    }
 }
 
-.nav-link.show{
-    color: $textColor_hover !important;
+.navbar-toggler{
+    border: none !important;
+    &:focus{
+        box-shadow: none;
+    }
 }
 
-li.dropdown{
-    position: initial;
+li{
+    &.dropdown{
+        position: initial;
+    }
 }
 
 .dropdown-menu{
@@ -37,54 +48,61 @@ li.dropdown{
     display: table-cell;
 }
 
-.dropdown-menu.show{
-    z-index: 999;
-    margin-top: 0px;
-    border: none;
-    border-radius: 0px;
-    background-color: $backgroundColor_darkmode !important;
+.dropdown-menu{
+    &.show{
+        z-index: 999;
+        margin-top: 0px;
+        border: none;
+        border-radius: 0px;
+        background-color: $backgroundColor_darkmode !important;
+    }
 }
 
-.dropdown-toggle:after{
-    vertical-align: .135em;
+.dropdown-toggle{
+    &:after{
+        vertical-align: .135em;
+    }
 }
 
 .dropdown-item{
     color: $textColor_disabledLanguage !important;
+
+    &.enabled{
+        color: $textColor_enabledLanguage !important;
+        &:hover{
+            color: $TextColor_enabledLanguageHover !important;
+        }
+    }
 }
 
-.dropdown-item.enabled{
-    color: $textColor_enabledLanguage !important;
+.dropdown-item{
+    &.disabled{
+        text-decoration-line: line-through;
+        text-decoration-style: double;
+        color: $textColor_disabledLanguage !important;
+    }
 }
 
-.dropdown-item.disabled{
-    text-decoration-line: line-through;
-    text-decoration-style: double;
-    color: $textColor_disabledLanguage !important;
-}
-
-.dropdown-item.enabled:hover{
-    color: $TextColor_enabledLanguageHover !important;
-}
-
-.dropdown-item:hover{
-    cursor: pointer;
-    background-color: transparent;
+.dropdown-item{
+    &:hover{
+        cursor: pointer;
+        background-color: transparent;
+    }
 }
 
 .web-version{
     color: #FFDEB4 !important;
-}
-
-.web-version:hover{
-    color: #FFF6BD !important;
+    
+    &:hover{
+        color: #FFF6BD !important;
+    }
 }
 
 // Changelog \\
 #HW_badge_cont{
-    content: url(../images/icons/notifications.png);
+    content: url(../Images/Icons/notifications.png);
     margin-right: 5px;
-    color: #FEBE8C;
+    color: #FFDEB4;
     z-index: 999;
 }
 

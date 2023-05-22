@@ -1,17 +1,16 @@
 import React, { useRef } from 'react';
+import axios from 'axios';
 import '../../Components/WeatherContainer/WeatherContainer.scss';
-import { json } from 'react-router-dom';
 
-function WeatherContainer(){
-    
+export default function WeatherContainer(){
+
     const weather = {
-        apiKey: process.env.REACT_APP_API_KEY, // [https://stackoverflow.com/questions/70855580/module-not-found-error-cant-resolve-fs-in-dotenv-lib] \\
         defaultLanguage: "english",
-        jsonUrl: "https://api.npoint.io/2c7544407e4a00ec3345",
+        jsonUrl: 'https://worldweather-web.vercel.app/translations',
         languageMessages: {
-            english: {message: 'Language changed, reloading website!'},
-            spanish: {message: '¡Idioma modificado, recargando el sitio web!'},
-            japanese: {message: '言語が変更され、ウェブサイトを再読み込みしています！'}
+            english: {languageChangedMessage: 'Language changed, reloading website!', errorMessage: 'City or weather not found, try another!'},
+            spanish: {languageChangedMessage: '¡Idioma modificado, recargando el sitio web!', errorMessage: 'Ciudad o clima no encontrados, intente otro!'},
+            japanese: {languageChangedMessage: '言語が変更され、ウェブサイトを再読み込みしています！', errorMessage: '都市または気候が見つかりません'}
         },
         
         fetchWeather: function(city) {
@@ -22,15 +21,15 @@ function WeatherContainer(){
             };
             const language = localStorage.getItem("language");
             const langCode = languageMap[language] || "en";
-            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${langCode}&units=metric&appid=${this.apiKey}`)
-            .then(response => {
-                if (!response.ok) {
-                    this.InvalidLocation("No weather found! Try another");
-                    throw new Error("Invalid entry");
-                }
-              return response.json();
-            })
             
+            axios.get(`https://worldweather-web.vercel.app/weather?city=${city}`)
+                .then(response => {
+                    if (!response.data) {
+                        this.InvalidLocation("No weather found! Try another"); // <-- Pending..
+                        throw new Error("Invalid entry");
+                    }
+                return response.data;
+            })
             .then(data => this.displayWeather(data))
             .catch(error => console.error(error));
         },
@@ -88,8 +87,7 @@ function WeatherContainer(){
               localStorage.setItem("language", attr);
               Swal.fire({
                 icon: 'info',
-                /* text: weather.jsonUrl/attr/["message"], */
-                text: weather.languageMessages[attr].message,
+                text: weather.languageMessages[attr].languageChangedMessage,
                 showConfirmButton: false,
                 timer: 2750,
                 timerProgressBar: true,
@@ -107,11 +105,12 @@ function WeatherContainer(){
             }
         },
         
-        InvalidLocation: function(message) {
+        InvalidLocation: function(language) {
+            const attr = language.target.getAttribute("language");
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: message,
+                text: weather.languageMessages[attr].errorMessage,
                 showConfirmButton: false,
                 timer: 2750,
                 timerProgressBar: true,
@@ -144,7 +143,7 @@ function WeatherContainer(){
     };
 
     // Default City/Country //
-    weather.fetchWeather("Tokyo, Japan");
+    weather.fetchWeather("Tokyo");
 
     // -------------------------------------------------------------- \\
 
@@ -179,5 +178,3 @@ function WeatherContainer(){
         </section>
     )
 }
-
-export default WeatherContainer;

@@ -8,7 +8,7 @@ const Radar = () => {
 
     document.querySelector("body").classList.add("radar");
 
-    const API_KEY = process.env.REACT_APP_API_KEY;
+    /* key... */
     const { lat, lon } = { lat: 30, lon: -20 };
     const layer = 'temp_new';
     const z = 5;

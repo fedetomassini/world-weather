@@ -1,17 +1,43 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-// import us from './assets/images/countries/us.png'
-// import es from './assets/images/countries/es.png';
-// import jp from './assets/images/countries/jp.png';
-import webLogo from './assets/images/web-logo.png';
+// import us from './Assets/Images/Countries/us.png'
+// import es from './Assets/Images/Countries/es.png';
+// import jp from './Assets/Images/Countries/jp.png';
+import webLogo from './Assets/Images/webLogo.png';
 
-import './assets/styles/App.scss';
+import './Assets/Styles/App.scss';
 
 import WeatherContainer from './Components/WeatherContainer/WeatherContainer';
 import Radar from "./Components/Radar/Radar";
 
+function User(){
+    function generateUserId(){
+        let id = "";
+        let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      
+        for (let i = 0; i < 16; i++) {
+          id += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+      
+        return id;
+    }
+
+    function defaultUserLanguage(){
+        localStorage.setItem("language", "english");
+
+        return
+    }
+
+    let userId = localStorage.getItem("userId") || generateUserId();
+    localStorage.setItem("userId", userId);
+
+    let userLanguage = localStorage.getItem("language") || defaultUserLanguage();
+}
+
+
 function App(){
+    User();
 
     return(
         <Router>
@@ -81,11 +107,11 @@ function App(){
                         </div>
                     </div>
                 </nav>
-                <Routes>
+            </section> 
+            <Routes>
                     <Route path="/" element={<WeatherContainer/>}/>
                     {/* <Route path="/radar" element={<Radar/>}/> */} {/* Work In Progress */}
-                </Routes>
-            </section>    
+            </Routes>   
         </Router>       
     )
 }
