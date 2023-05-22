@@ -1,0 +1,29 @@
+{
+    "english": {
+        "message": "Language changed, reload the website!",
+        "wind": "Wind Speed: ",
+        "humidity": "Humidity: ",
+        "description": "",
+        "placeholder": "Search a city/country...",
+        "pressure": "Atmospheric Pressure: ",
+        "clouds": "Clouds: "
+    },
+    "spanish": {
+        "message": "¡Idioma cambiado, recarga el sitio web!",
+        "wind": "Velocidad del viento: ",
+        "humidity": "Humedad: ",
+        "description": "",
+        "placeholder": "Busca una ciudad/país...",
+        "pressure": "Presión Atmosférica: ",
+        "clouds": "Nubes: "
+    },
+    "japanese": {
+        "message": "言語が変更されました、ウェブサイトをリロードしてください！",
+        "wind": "風速: ",
+        "humidity": "しっけ: ",
+        "description": "",
+        "placeholder": "都市を探す...",
+        "pressure": "たいきあつ: ",
+        "clouds": "雲です。: "
+    }
+}
