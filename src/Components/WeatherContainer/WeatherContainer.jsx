@@ -5,8 +5,9 @@ import '../../Components/WeatherContainer/WeatherContainer.scss';
 export default function WeatherContainer(){
 
     const weather = {
+        apiKey: process.env.REACT_APP_API_KEY, // [https://stackoverflow.com/questions/70855580/module-not-found-error-cant-resolve-fs-in-dotenv-lib] \\
         defaultLanguage: "english",
-        jsonUrl: 'https://worldweather-web.vercel.app/translations',
+        jsonUrl: "https://api.npoint.io/2c7544407e4a00ec3345",
         languageMessages: {
             english: {languageChangedMessage: 'Language changed, reloading website!', errorMessage: 'City or weather not found, try another!'},
             spanish: {languageChangedMessage: '¡Idioma modificado, recargando el sitio web!', errorMessage: 'Ciudad o clima no encontrados, intente otro!'},
@@ -22,7 +23,7 @@ export default function WeatherContainer(){
             const language = localStorage.getItem("language");
             const langCode = languageMap[language] || "en";
             
-            axios.get(`https://worldweather-web.vercel.app/weather?city=${city}`)
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${langCode}&units=metric&appid=${this.apiKey}`)
                 .then(response => {
                     if (!response.data) {
                         this.InvalidLocation("No weather found! Try another"); // <-- Pending..

@@ -1,9 +1,9 @@
 {
   "name": "world-weather-app",
-  "version": "a-0.4",
+  "version": "a-0.3.7",
   "scripts": {
     "start:backend": "node server/index.js",
-    "start:frontend": "react-scripts start > private/dev_logs/log.txt 2>&1",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

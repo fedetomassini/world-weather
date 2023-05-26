@@ -13,7 +13,7 @@
 
 ## Version
 ```txt
-a-0.4 [Test] | 22/05/2023
+a-0.3.7 | 26/05/2023
 ```
   
 ## Language Support List:

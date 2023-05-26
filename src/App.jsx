@@ -103,9 +103,12 @@ function App(){
                                         <li><span className="dropdown-item disabled" language="chinese">Chinese</span></li>                    
                                     </ul>
                                 </li>
+                                <li className="nav-item nav-link copyright-message">Created by <a href="https://github.com/fedetomassini">fedetomassini</a> & <a href="https://github.com/FacundoCostas">facundocostas</a></li>
                             </ul>
                         </div>
+                        
                     </div>
+                    
                 </nav>
             </section> 
             <Routes>
