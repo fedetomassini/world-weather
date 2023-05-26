@@ -2,7 +2,6 @@
 	<img src="https://raw.githubusercontent.com/fedetomassini/world-weather/main/public/webLogo.ico" width="100" alt="Logo"/><br/>
 	<a href="https://github.com/fedetomassini/world-weather">World Weather</a><br/>
   <span>A weather search application that allows users to view current weather conditions in cities across the globe.</span>
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
 <p align="center">
