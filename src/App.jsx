@@ -6,7 +6,7 @@ import webLogo from './Assets/Images/webLogo.png';
 import './Assets/Styles/App.scss';
 
 import WeatherContainer from './Components/WeatherContainer/WeatherContainer';
-import Radar from "./Components/Radar/Radar";
+/* import Radar from "./Components/Radar/Radar"; */
 
 function User(){
     function generateUserId(){
