@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import axios from 'axios';
+
 import '../../Components/WeatherContainer/WeatherContainer.scss';
 
 export default function WeatherContainer(){
@@ -26,7 +27,7 @@ export default function WeatherContainer(){
             axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${langCode}&units=metric&appid=${this.apiKey}`)
                 .then(response => {
                     if (!response.data) {
-                        this.InvalidLocation("No weather found! Try another"); // <-- Pending..
+                        this.InvalidLocation("No weather found! Try another");
                         throw new Error("Invalid entry");
                     }
                 return response.data;

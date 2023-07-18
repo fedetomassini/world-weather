@@ -1,9 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-// import us from './Assets/Images/Countries/us.png'
-// import es from './Assets/Images/Countries/es.png';
-// import jp from './Assets/Images/Countries/jp.png';
 import webLogo from './Assets/Images/webLogo.png';
 
 import './Assets/Styles/App.scss';
@@ -103,7 +100,7 @@ function App(){
                                         <li><span className="dropdown-item disabled" language="chinese">Chinese</span></li>                    
                                     </ul>
                                 </li>
-                                <li className="nav-item nav-link copyright-message">Created by <a href="https://github.com/fedetomassini">fedetomassini</a> & <a href="https://github.com/FacundoCostas">facundocostas</a></li>
+                                <li className="nav-item nav-link copyright-message">Created by <a href="https://github.com/fedetomassini">@fedetomassini</a> & <a href="https://github.com/FakuKostasDvlpr">@facundocostas</a></li>
                             </ul>
                         </div>
                         

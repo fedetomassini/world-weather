@@ -1,37 +1,38 @@
 {
   "name": "world-weather-app",
-  "version": "a-0.3.7",
+  "author": "https://github.com/fedetomassini",
+  "contributors": ["https://github.com/FakuKostasDvlpr"],
+  "version": "alpha-0.4.0",
   "scripts": {
-    "start:backend": "node server/index.js",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+      "dev": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
   },
   "dependencies": {
-    "axios": "^1.4.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "leaflet": "^1.9.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-leaflet": "^4.2.1",
-    "react-router-dom": "^6.9.0",
-    "react-scripts": "^5.0.1",
-    "request": "^2.88.2",
-    "sass": "^1.62.0"
+      "axios": "^1.4.0",
+      "cors": "^2.8.5",
+      "dotenv": "^16.0.3",
+      "express": "^4.18.2",
+      "leaflet": "^1.9.3",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-leaflet": "^4.2.1",
+      "react-router-dom": "^6.9.0",
+      "react-scripts": "^5.0.1",
+      "request": "^2.88.2",
+      "sass": "^1.62.0"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
   }
 }

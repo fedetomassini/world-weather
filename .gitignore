@@ -6,6 +6,8 @@
 #misc
 /private
 /server
+/vercel.json
 
 #others
 /.env
+/src/Components/Radar

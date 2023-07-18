@@ -1,5 +1,5 @@
 <h3 align="center">
-	<img src="https://raw.githubusercontent.com/fedetomassini/world-weather/main/public/webLogo.ico" width="100" alt="Logo"/><br/>
+	<img src="https://raw.githubusercontent.com/fedetomassini/world-weather/main/public/website.ico" width="100" alt="Logo"/><br/>
 	<a href="https://github.com/fedetomassini/world-weather">World Weather</a><br/>
   <span>A weather search application that allows users to view current weather conditions in cities across the globe.</span>
 </h3>
