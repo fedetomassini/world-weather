@@ -1,106 +1,104 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
-import webLogo from './Assets/Images/webLogo.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faSatelliteDish, faLanguage, faCopyright, faTemperatureLow, 
+    faCloudShowersHeavy, faCloud, faWind, faDownLeftAndUpRightToCenter } from "@fortawesome/free-solid-svg-icons";
 
+import webLogo from './Assets/Images/website.png';
 import './Assets/Styles/App.scss';
 
 import WeatherContainer from './Components/WeatherContainer/WeatherContainer';
-/* import Radar from "./Components/Radar/Radar"; */
+import Radar from "./Components/Radar/Radar";
 
 function User(){
-    function generateUserId(){
-        let id = "";
-        let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-      
-        for (let i = 0; i < 16; i++) {
-          id += possible.charAt(Math.floor(Math.random() * possible.length));
-        }
-      
-        return id;
+    const defaultUserLanguage =() => {
+        localStorage.setItem('language', 'en');
+        return;
     }
 
-    function defaultUserLanguage(){
-        localStorage.setItem("language", "english");
-
-        return
-    }
-
-    let userId = localStorage.getItem("userId") || generateUserId();
-    localStorage.setItem("userId", userId);
-
-    let userLanguage = localStorage.getItem("language") || defaultUserLanguage();
+    let userLanguage = localStorage.getItem('language') || defaultUserLanguage();
 }
 
 
-function App(){
+export default function App(){
+
     User();
+
+    const [ translate, i18n ] = useTranslation("global");
+
+    const handleLanguageChange = (language) => {
+        i18n.changeLanguage(language);
+        localStorage.setItem('language', language)
+    };
 
     return(
         <Router>
             <section>
                 <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-dark">
                     <div className="container-fluid">
-                        <Link to='/' className="navbar-brand"><img src={webLogo} width={32}/></Link>
+                        <Link to='/' className="navbar-brand"><img src={webLogo} width={32} alt='' title='Beta 0.5'/></Link>
+                        <span className='webVersion'>{translate('app.webVersion')}</span>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li className="nav-item"><Link to={'/'} className="nav-link" aria-current="page">Home</Link></li>
-                                <li className="nav-item dropdown"><Link to={''} className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Extra</Link>
+                                <li className="nav-item"><Link to={'/'} className="nav-link unique" aria-current="page"><FontAwesomeIcon icon={faHome}/> {translate('app.links.navHome')}</Link></li>
+                                <li className="nav-item dropdown"><Link to={''} className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><FontAwesomeIcon icon={faSatelliteDish}/> {translate('app.links.navExtra')}</Link>
                                     <ul className="dropdown-menu" style={{maxHeight: '200px', overflowY: 'auto'}}>
-                                        <li><Link to={''} className="dropdown-item disabled">Temperatures Radar</Link></li>
-                                        <li><Link to={''} className="dropdown-item disabled">Precipitations Radar</Link></li>
-                                        <li><Link to={''} className="dropdown-item disabled">Clouds Radar</Link></li>
-                                        <li><Link to={''} className="dropdown-item disabled">Wind Radar</Link></li>
-                                        <li><Link to={''} className="dropdown-item disabled">Pressure Radar</Link></li>
+                                        <li><Link to={''} className="dropdown-item disabled"><FontAwesomeIcon icon={faTemperatureLow}/> {translate('app.links.navTempRadar')}</Link></li>
+                                        <li><Link to={''} className="dropdown-item disabled"><FontAwesomeIcon icon={faCloudShowersHeavy}/> {translate('app.links.navPrecptRadar')}</Link></li>
+                                        <li><Link to={''} className="dropdown-item disabled"><FontAwesomeIcon icon={faCloud}/> {translate('app.links.navCloudsRadar')}</Link></li>
+                                        <li><Link to={''} className="dropdown-item disabled"><FontAwesomeIcon icon={faWind}/> {translate('app.links.navWindRadar')}</Link></li>
+                                        <li><Link to={''} className="dropdown-item disabled"><FontAwesomeIcon icon={faDownLeftAndUpRightToCenter}/> {translate('app.links.navPressureRadar')}</Link></li>
                                     </ul>
                                 </li>
                                 {/*  */}
-                                <li className="nav-item dropdown"><Link to={''} className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Language</Link>
-                                    <ul className="dropdown-menu" id="switchLanguageBar" style={{maxHeight: '200px', overflowY: 'auto'}}>
-                                        <li><span className="dropdown-item disabled" language="arabic">Arabic</span></li>
-                                        <li><span className="dropdown-item disabled" language="bulgarian">Bulgarian</span></li>
-                                        <li><span className="dropdown-item disabled" language="catalan">Catalan</span></li>
-                                        <li><span className="dropdown-item disabled" language="czech">Czech</span></li>
-                                        <li><span className="dropdown-item disabled" language="danish">Danish</span></li>
-                                        <li><span className="dropdown-item disabled" language="german">German</span></li>
-                                        <li><span className="dropdown-item disabled" language="greek">Greek</span></li>
-                                        <li><span className="dropdown-item enabled" language="english">English</span></li>
-                                        <li><span className="dropdown-item disabled" language="persian">Persian</span></li>
-                                        <li><span className="dropdown-item disabled" language="finnish">Finnish</span></li>
-                                        <li><span className="dropdown-item disabled" language="french">French</span></li>
-                                        <li><span className="dropdown-item disabled" language="galician">Galician</span></li>
-                                        <li><span className="dropdown-item disabled" language="hindi">Hindi</span></li>
-                                        <li><span className="dropdown-item disabled" language="croatian">Croatian</span></li>
-                                        <li><span className="dropdown-item disabled" language="hungarian">Hungarian</span></li>
-                                        <li><span className="dropdown-item disabled" language="indonesian">Indonesian</span></li>
-                                        <li><span className="dropdown-item disabled" language="italian">Italian</span></li>
-                                        <li><span className="dropdown-item enabled" language="japanese">Japanese</span></li>
-                                        <li><span className="dropdown-item disabled" language="korean">Korean</span></li>
-                                        <li><span className="dropdown-item disabled" language="latvian">Latvian</span></li>
-                                        <li><span className="dropdown-item disabled" language="lithuanian">Lithuanian</span></li>
-                                        <li><span className="dropdown-item disabled" language="macedonian">Macedonian</span></li>
-                                        <li><span className="dropdown-item disabled" language="norwegian">Norwegian</span></li>
-                                        <li><span className="dropdown-item disabled" language="dutch">Dutch</span></li>
-                                        <li><span className="dropdown-item disabled" language="polish">Polish</span></li>
-                                        <li><span className="dropdown-item disabled" language="portuguese">Portuguese</span></li>
-                                        <li><span className="dropdown-item disabled" language="romanian">Romanian</span></li>
-                                        <li><span className="dropdown-item disabled" language="russian">Russian</span></li>
-                                        <li><span className="dropdown-item disabled" language="serbian">Serbian</span></li>
-                                        <li><span className="dropdown-item disabled" language="slovak">Slovak</span></li>
-                                        <li><span className="dropdown-item disabled" language="slovenian">Slovenian</span></li>
-                                        <li><span className="dropdown-item enabled" language="spanish">Spanish</span></li>
-                                        <li><span className="dropdown-item disabled" language="swedish">Swedish</span></li>
-                                        <li><span className="dropdown-item disabled" language="thai">Thai</span></li>
-                                        <li><span className="dropdown-item disabled" language="turkish">Turkish</span></li>
-                                        <li><span className="dropdown-item disabled" language="ukrainian">Ukrainian</span></li>
-                                        <li><span className="dropdown-item disabled" language="vietnamese">Vietnamese</span></li>
-                                        <li><span className="dropdown-item disabled" language="chinese">Chinese</span></li>                    
+                                <li className="nav-item dropdown"><Link to={''} className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><FontAwesomeIcon icon={faLanguage}/> {translate('app.links.navLanguages.navLang')}</Link>
+                                    <ul className="dropdown-menu " id="switchLanguageBar" style={{maxHeight: '200px', overflowY: 'auto'}}>
+                                        <li><span className="dropdown-item disabled" language="arabic">{translate('app.links.navLanguages.langArabic')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="bulgarian">{translate('app.links.navLanguages.langBulgarian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="catalan">{translate('app.links.navLanguages.langCatalan')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="czech">{translate('app.links.navLanguages.langCzech')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="danish">{translate('app.links.navLanguages.langDanish')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="german">{translate('app.links.navLanguages.langGerman')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="greek">{translate('app.links.navLanguages.langGreek')}</span></li>
+                                        <li><span className="dropdown-item enabled" onClick={() => handleLanguageChange('en')} language="english">{translate('app.links.navLanguages.langEnglish')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="persian">{translate('app.links.navLanguages.langPersian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="finnish">{translate('app.links.navLanguages.langFinnish')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="french">{translate('app.links.navLanguages.langFrench')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="galician">{translate('app.links.navLanguages.langGalician')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="hindi">{translate('app.links.navLanguages.langHindi')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="croatian">{translate('app.links.navLanguages.langCroatian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="hungarian">{translate('app.links.navLanguages.langHungarian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="indonesian">{translate('app.links.navLanguages.langIndonesian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="italian">{translate('app.links.navLanguages.langItalian')}</span></li>
+                                        <li><span className="dropdown-item enabled" onClick={() => handleLanguageChange('ja')} language="japanese">{translate('app.links.navLanguages.langJapanese')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="korean">{translate('app.links.navLanguages.langKorean')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="latvian">{translate('app.links.navLanguages.langLatvian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="lithuanian">{translate('app.links.navLanguages.langLithuanian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="macedonian">{translate('app.links.navLanguages.langMacedonian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="norwegian">{translate('app.links.navLanguages.langNorwegian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="dutch">{translate('app.links.navLanguages.langDutch')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="polish">{translate('app.links.navLanguages.langPolish')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="portuguese">{translate('app.links.navLanguages.langPortuguese')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="romanian">{translate('app.links.navLanguages.langRomanian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="russian">{translate('app.links.navLanguages.langRussian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="serbian">{translate('app.links.navLanguages.langSerbian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="slovak">{translate('app.links.navLanguages.langSlovak')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="slovenian">{translate('app.links.navLanguages.langSlovenian')}</span></li>
+                                        <li><span className="dropdown-item enabled" onClick={() => handleLanguageChange('es')} language="spanish">{translate('app.links.navLanguages.langSpanish')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="swedish">{translate('app.links.navLanguages.langSwedish')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="thai">{translate('app.links.navLanguages.langThai')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="turkish">{translate('app.links.navLanguages.langTurkish')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="ukrainian">{translate('app.links.navLanguages.langUkrainian')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="vietnamese">{translate('app.links.navLanguages.langVietnamese')}</span></li>
+                                        <li><span className="dropdown-item disabled" language="chinese">{translate('app.links.navLanguages.langChinese')}</span></li>                    
                                     </ul>
                                 </li>
-                                <li className="nav-item nav-link copyright-message">Created by <a href="https://github.com/fedetomassini">@fedetomassini</a> & <a href="https://github.com/FakuKostasDvlpr">@facundocostas</a></li>
+                                <li className="nav-item nav-link copyright-message"><FontAwesomeIcon icon={faCopyright}/> {translate('app.copyrightMessage')} <a href="https://github.com/fedetomassini">@fedetomassini</a> & <a href="https://github.com/FakuKostasDvlpr">@facundocostas</a></li>
                             </ul>
                         </div>
                         
@@ -115,5 +113,3 @@ function App(){
         </Router>       
     )
 }
-
-export default App;

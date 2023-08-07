@@ -1,0 +1,77 @@
+{
+    "app": {
+        "webVersion": "Beta 0.5",
+        "links": {
+            "navHome": "Inicio",
+            "navExtra": "Extra",
+            "navTempRadar": "Radar Temperaturas",
+            "navPrecptRadar": "Radar Precipitaciones",
+            "navCloudsRadar": "Radar Nubosidad",
+            "navWindRadar": "Radar Viento",
+            "navPressureRadar": "Radar Presión",
+            "navLanguages": {
+                "navLang": "Idioma",
+
+                "langArabic": "Árabe",
+                "langBulgarian": "Búlgaro",
+                "langCatalan": "Catalán",
+                "langCzech": "Checo",
+                "langDanish": "Danés",
+                "langGerman": "Alemán",
+                "langGreek": "Griego",
+                "langEnglish": "Inglés",
+                "langPersian": "Persa",
+                "langFinnish": "Finlandés",
+                "langFrench": "Francés",
+                "langGalician": "Gallego",
+                "langHindi": "Hindú",
+                "langCroatian": "Croata",
+                "langHungarian": "Húngaro",
+                "langIndonesian": "Indonesio",
+                "langItalian": "Italiano",
+                "langJapanese": "Japonés",
+                "langKorean": "Coreano",
+                "langLatvian": "Letón",
+                "langLithuanian": "Lituano",
+                "langMacedonian": "Macedonio",
+                "langNorwegian": "Noruego",
+                "langDutch": "Holandés",
+                "langPolish": "Polaco",
+                "langPortuguese": "Portugués",
+                "langRomanian": "Rumano",
+                "langRussian": "Ruso",
+                "langSerbian": "Serbio",
+                "langSlovak": "Eslovaco",
+                "langSlovenian": "Esloveno",
+                "langSpanish": "Español",
+                "langSwedish": "Sueco",
+                "langThai": "Tailandés",
+                "langTurkish": "Turco",
+                "langUkrainian": "Ucraniano",
+                "langVietnamese": "Vietnamita",
+                "langChinese": "Chino"
+
+            }
+        },
+        "copyrightMessage": "Creado por "
+    },
+    "weatherContainer": {
+        "sweetAlertMessage1": "La entrada",
+        "sweetAlertMessage2": "no existe o no puede ser encontrado!",
+        "panelInformation":{
+            "windSpeed": "Velocidad del Viento: ",
+            "clouds": "Nubes: ",
+            "humidity": "Humedad: ",
+            "pressure": "Presión Atmosférica: ",
+            "description": "",
+            "placeholder": "Busca una ciudad/país...",
+            "locationTitle": "Ubicación"
+        },
+        "languageMessages": {
+            "spanish": {
+                "languageChangedMessage": "¡Idioma cambiado!",
+                "errorMessage": "Ciudad o tiempo no encontrados, ¡intente con otro!"    
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@
 @import '../Styles/Index.scss';
 @import '../../Components/WeatherContainer/WeatherContainer.scss';
 
-$textColor_hover: #49a569;
+$textColor_hover: #AAC8A7;
 
 $TextColor_enabledLanguageHover: #FEBE8C;
 $textColor_enabledLanguage: $textColor_values;
@@ -15,12 +15,30 @@ nav{
         color: $textColor_disabledLanguage !important;
         background-color: $backgroundColor_darkmode !important;
         box-sizing: border-box;
+        .webVersion{
+            display: block;
+            font-size: 9pt;
+            font-style: italic;
+            margin-right: 10px;
+            margin-left: -5px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
         .nav-link{
-            &:hover{
+            &:hover, &:focus{
                 color: $textColor_hover !important;
             }
             &.show{
                 color: $textColor_hover !important;
+            }
+            &.unique{
+                text-decoration-line: underline;
+                text-decoration-style: dashed;
+                text-underline-offset: 5px;
+                &:hover{
+                    transition: all ease-in-out 175ms;
+                    text-underline-offset: 8px;
+                }
             }
         }
         .navbar-toggler{
@@ -29,15 +47,31 @@ nav{
                 box-shadow: none;
             }
         }
+        .changelog{
+            svg{
+                color: rgba(255, 255, 255, 0.55);
+                &:hover{
+                    color: $textColor_hover !important;
+                }
+            }
+        }
         .copyright-message{
-            margin-top: 4px;
+            margin-top: 3.5px;
             text-align: center;
             font-size: 10pt;
             &:hover{
                 color: rgba(255, 255, 255, 0.55) !important;
             }
             a{
-                color: #1B9C85;
+                $authorColor: #AAC8A7;
+                color: $authorColor;
+                text-decoration-line: underline;
+                text-decoration-style: dashed;
+                text-underline-offset: 3px;
+                &:hover{
+                    transition: all ease-in-out 175ms;
+                    text-underline-offset: 6px;
+                }
             }
         }
         ul{
@@ -87,29 +121,6 @@ nav{
         }
     }
 }
-
-
-// Changelog \\
-#HW_badge_cont{
-    content: url(../Images/Icons/notifications.png);
-    margin-right: 5px;
-    color: #FFDEB4;
-    z-index: 999;
-}
-
-#changelog{
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 65px;
-}
-
-.HW_frame_cont{
-    width: 290px !important;
-    margin-top: 5px !important;    
-}
-
 
 @media screen and (max-width: 992px){
     .dropdown-menu{

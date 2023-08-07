@@ -3,117 +3,134 @@
 @import '../../Assets/Styles/Index.scss';
 
 $textColor_default: #F6ECF0;
-$textColor_values: #FFDEB4;
+$textColor_values: #C3EDC0;
 
-section.contents-darkgray{
+.contents-darkgray{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 530px;
     margin-top: 45px;
     background-color: transparent !important;
-}
 
-div.card-weather{
-    background-color: $backgroundColor_darkmode !important;
-    padding: 3em 3em;
-    border-radius: 30px;
-    width: 100%;
-    max-width: 520px; /* default 420px */
-    margin: 1em;
-    box-shadow: -5px 19px 19px 10px rgba(2, 2, 2, 0.486) !important;
-    margin-top: -30px;
-}
+    .card-weather{
+        background-color: $backgroundColor_darkmode !important;
+        padding: 3em 3em;
+        border-radius: 30px;
+        width: 100%;
+        max-width: 520px; // default 420px //
+        margin: 1em;
+        box-shadow: -5px 19px 19px 10px rgba(2, 2, 2, 0.486) !important;
+        margin-top: 0; // Old => -30px \\
+        margin-bottom: 40px;
+    }
 
-div.search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-button.search-button {
-    margin: 0.5em 0 0.5em 1em;
-    border-radius: 50%;
-    border: none;
-    height: 44px;
-    width: 44px;
-    outline: none;
-    background: #7c7c7c2b !important;
-    color: $textColor_default !important;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-}
-button.search-button:hover {
-    background: #1e1e1e !important;
+        .search-bar {
+            border: none;
+            outline: none;
+            padding: 0.4em 1em;
+            border-radius: 24px;
+            background: #7c7c7c2b !important;
+            color: $textColor_default !important;
+            font-family: inherit;
+            font-size: 105%;
+            width: calc(100% - 100px);
+            &:focus{
+                color: $textColor_default !important;
+            }
+        }
+
+        .search-button {
+            margin: 0.5em 0 0.5em 1em;
+            border-radius: 50%;
+            border: none;
+            height: 44px;
+            width: 44px;
+            outline: none;
+            background: #7c7c7c2b !important;
+            color: $textColor_default !important;
+            cursor: pointer;
+            &:hover{
+                transition: all ease-in-out 285ms;
+                background: #1e1e1e !important;
+            }
+        }
+    }
+
+
+
+    .weather{
+        color: $textColor_default !important;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &.loading{
+            display: none;
+            max-height: max-content;
+            &:after{
+                display: content;
+            }
+        }
+
+        .city{
+            font-weight: 700;
+            font-size: 24px;
+            margin-top: 15px;
+        }
+
+        .temp {
+            font-weight: 700;
+            margin: 0;
+            margin-top: -0.2em;
+            margin-bottom: 0.4em;
+            font-size: 50px;
+            color: $textColor_values;
+        }
+
+        .min_max{
+            margin-top: -15px !important;
+            margin-bottom: 5px !important;
+            display: inline-block !important;
+
+            .temp_min, .temp_max{
+                /* color: $textColor_values; */
+                text-decoration-line: underline;
+                text-decoration-style: dashed;
+                text-underline-offset: 5px;
+            }
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            margin-left: -10px;
+        }
+
+        .humidity {
+            .humidityValue {
+                color: $textColor_values; // Reemplaza $textColor_values por el color que desees
+            }
+        }
+
+        .description {
+            text-transform: capitalize;
+        }
+
+        #mapLocationDot{
+            &:hover{
+                color: #AAC8A7;
+            }
+        }
+    }
 }
 
 svg{
     margin-top: -6.5px;
     vertical-align: middle;
-}
-  
-input.search-bar {
-    border: none;
-    outline: none;
-    padding: 0.4em 1em;
-    border-radius: 24px;
-    background: #7c7c7c2b !important;
-    color: $textColor_default !important;
-    font-family: inherit;
-    font-size: 105%;
-    width: calc(100% - 100px);
-}
-input.search-bar:focus{
-    color: $textColor_default !important;
-}
-
-div.weather{
-    color: $textColor_default !important;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-div.weather.loading{
-    display: none;
-    max-height: max-content;
-}
-
-div.weather.loading:after{
-    display: content;
-}
-
-h2.city{
-    font-weight: 700;
-    font-size: 24px;
-    margin-top: 30px;
-}
-
-h1.temp {
-    font-weight: 700;
-    margin: 0;
-    margin-bottom: 0.4em;
-    font-size: 50px;
-    color: $textColor_values;
-}
-
-div.min_max{
-    margin-top: -15px !important;
-    margin-bottom: 5px !important;
-    display: inline-block !important;
-}
-
-span.temp_min, span.temp_max{
-    color: $textColor_values;
-}
-
-div.flex {
-    display: flex;
-    align-items: center;
-    margin-left: -10px;
-}
-  
-div.description {
-    text-transform: capitalize;
-    margin-left: 8px;
 }

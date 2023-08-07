@@ -1,0 +1,77 @@
+{
+    "app": {
+        "webVersion": "ベータ 0.5",
+        "links": {
+            "navHome": "ホーム",
+            "navExtra": "ボーナス",
+            "navTempRadar": "温度レーダー",
+            "navPrecptRadar": "降水レーダー",
+            "navCloudsRadar": "雲レーダー",
+            "navWindRadar": "ウィンドレーダー",
+            "navPressureRadar": "圧力レーダー",
+            "navLanguages": {
+                "navLang": "言語",
+
+                "langArabic": "アラビア語",
+                "langBulgarian": "ブルガリア語",
+                "langCatalan": "カタロニア語",
+                "langCzech": "チェコ",
+                "langDanish": "デンマーク語",
+                "langGerman": "ドイツ語",
+                "langGreek": "ギリシャ語",
+                "langEnglish": "英語",
+                "langPersian": "ペルシャ語",
+                "langFinnish": "フィンランド語",
+                "langFrench": "フランス語",
+                "langGalician": "ガリシア語",
+                "langHindi": "ヒンディー語",
+                "langCroatian": "クロアチア語",
+                "langHungarian": "ハンガリー語",
+                "langIndonesian": "インドネシア語",
+                "langItalian": "イタリア語",
+                "langJapanese": "日本語",
+                "langKorean": "韓国語",
+                "langLatvian": "ラトビア語",
+                "langLithuanian": "リトアニア語",
+                "langMacedonian": "マケドニア語",
+                "langNorwegian": "ノルウェー語",
+                "langDutch": "オランダ語",
+                "langPolish": "ポーランド語",
+                "langPortuguese": "ポルトガル語",
+                "langRomanian": "ルーマニア語",
+                "langRussian": "ロシア語",
+                "langSerbian": "セルビア語",
+                "langSlovak": "スロバキア語",
+                "langSlovenian": "スロベニア語",
+                "langSpanish": "スペイン語",
+                "langSwedish": "スウェーデン語",
+                "langThai": "タイ語",
+                "langTurkish": "トルコ語",
+                "langUkrainian": "ウクライナ語",
+                "langVietnamese": "ベトナム語",
+                "langChinese": "中国語"
+
+            }
+        },
+        "copyrightMessage": "作成者 "
+    },
+    "weatherContainer": {
+        "sweetAlertMessage1": "入力",
+        "sweetAlertMessage2": "が存在しないか、見つからない！",
+        "panelInformation":{
+            "windSpeed": "風速: ",
+            "clouds": "雲: ",
+            "humidity": "湿度: ",
+            "pressure": "大気圧: ",
+            "description": "",
+            "placeholder": "検索都市/国...",
+            "locationTitle": "所在地"
+        },
+        "languageMessages": {
+            "english": {
+                "languageChangedMessage": "言語が変更された！",
+                "errorMessage": "都市または天候が見つかりません！"    
+            }
+        }
+    }
+}
